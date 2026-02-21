@@ -8,8 +8,8 @@ const navLinks = [
   { label: 'Culinary Experiences', href: '/tours' },
   { label: 'Shore Excursions', href: '/excursions' },
   { label: 'Tour Packages', href: '/tours' },
-  { label: 'Blog', href: '/#blog' },
-  { label: 'About Us', href: '/#about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About Us', href: '/about' },
 ];
 
 const Navbar = () => {

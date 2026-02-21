@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
@@ -59,8 +60,8 @@ const Footer = () => {
           <div className="footer__links-group">
             <h4 className="footer__links-title">Company</h4>
             <nav className="footer__links">
-              <a href="#" className="footer__link">About Us</a>
-              <a href="#blog" className="footer__link">Blog</a>
+              <Link to="/about" className="footer__link">About Us</Link>
+              <Link to="/blog" className="footer__link">Blog</Link>
               <a href="#contact" className="footer__link">Contact</a>
               <a href="#" className="footer__link">Privacy Policy</a>
             </nav>

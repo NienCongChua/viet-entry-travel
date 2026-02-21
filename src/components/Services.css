@@ -78,8 +78,8 @@
 
 .services__card--teal .services__card-icon-float { color: var(--color-primary); }
 .services__card--amber .services__card-icon-float { color: var(--color-accent); }
-.services__card--emerald .services__card-icon-float { color: #059669; }
-.services__card--rose .services__card-icon-float { color: #e11d48; }
+.services__card--emerald .services__card-icon-float { color: #10b981; }
+.services__card--rose .services__card-icon-float { color: var(--color-accent); }
 
 .services__card-body {
   padding: var(--space-6) var(--space-5);

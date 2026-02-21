@@ -14,7 +14,7 @@
   margin-bottom: var(--space-10);
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg, var(--color-primary-50), rgba(255,255,255,0.8));
+  background: linear-gradient(135deg, var(--color-primary-50), #f0fdfa, rgba(255,255,255,0.9));
 }
 
 .testimonials__quote-icon {

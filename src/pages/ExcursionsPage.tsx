@@ -185,7 +185,7 @@ const ExcursionsPage = () => {
 
             <div className="sp-products__grid">
               {filtered.map((exc) => (
-                <div key={exc.id} className="sp-product-card">
+                <Link key={exc.id} to={`/excursions/${exc.id}`} className="sp-product-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="sp-product-card__image">
                     <img src={exc.image} alt={exc.title} />
                     <span className="sp-product-card__port-badge">{exc.port}</span>
@@ -206,7 +206,7 @@ const ExcursionsPage = () => {
                       <span className="sp-product-card__price">From <strong>US${exc.price.toFixed(2)}</strong></span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

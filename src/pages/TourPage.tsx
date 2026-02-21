@@ -207,7 +207,7 @@ const TourPage = () => {
             {/* Product Cards */}
             <div className="sp-products__grid">
               {filtered.map((tour) => (
-                <div key={tour.id} className="sp-product-card">
+                <Link key={tour.id} to={`/tours/${tour.id}`} className="sp-product-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="sp-product-card__image">
                     <img src={tour.image} alt={tour.title} />
                   </div>
@@ -227,7 +227,7 @@ const TourPage = () => {
                       <span className="sp-product-card__price">From <strong>US${tour.price.toFixed(2)}</strong></span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
