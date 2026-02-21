@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, SlidersHorizontal, Star, Clock, ChevronDown, CheckCircle2, ArrowLeft, MapPin } from 'lucide-react';
+import { Search, SlidersHorizontal, Star, Clock, ChevronDown, ArrowLeft } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/ui/Button';
