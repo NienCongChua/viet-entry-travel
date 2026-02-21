@@ -1,0 +1,171 @@
+.testimonials {
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+/* Featured testimonial — large glass card */
+.testimonials__featured {
+  padding: var(--space-10) var(--space-12);
+  margin-bottom: var(--space-10);
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary-50), rgba(255,255,255,0.8));
+}
+
+.testimonials__quote-icon {
+  color: var(--color-primary);
+  opacity: 0.2;
+  margin-bottom: var(--space-4);
+}
+
+.testimonials__featured-text {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto var(--space-8);
+  font-style: italic;
+}
+
+.testimonials__featured-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.testimonials__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-600));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.testimonials__avatar--lg {
+  width: 52px;
+  height: 52px;
+  font-size: var(--font-size-base);
+}
+
+.testimonials__name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.testimonials__meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.testimonials__stars {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--color-accent);
+}
+
+.testimonials__stars--sm {
+  margin-bottom: var(--space-3);
+}
+
+/* Regular testimonial cards */
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.testimonials__card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.6s ease both;
+}
+
+.testimonials__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+/* Image with glass badge */
+.testimonials__card-image {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.testimonials__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.testimonials__card:hover .testimonials__card-image img {
+  transform: scale(1.06);
+}
+
+.testimonials__card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.4) 100%);
+}
+
+.testimonials__card-trip-badge {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  color: white;
+}
+
+.testimonials__card-body {
+  padding: var(--space-5);
+}
+
+.testimonials__card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.testimonials__card-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .testimonials__featured {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .testimonials__featured-text {
+    font-size: var(--font-size-lg);
+  }
+}
