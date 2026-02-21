@@ -30,10 +30,13 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Detect pages with white/light backgrounds (no dark hero)
+  const isLightPage = /^\/(tours|excursions)\//.test(location.pathname) || location.pathname === '/checkout';
   const isRoute = (href: string) => !href.startsWith('/#');
 
+
   return (
-    <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
+    <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isLightPage && !isScrolled ? 'navbar--light' : ''}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
           <img

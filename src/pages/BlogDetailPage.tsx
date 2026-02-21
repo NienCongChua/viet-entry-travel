@@ -277,9 +277,11 @@ const BlogDetailPage = () => {
             <div className="service-hero__bg-overlay"></div>
           </div>
           <div className="service-hero__content">
-            <Link to="/blog" className="detail-back-link">
-              <ArrowLeft size={16} /> All Articles
-            </Link>
+            <div className="blog-detail__hero-nav">
+              <Link to="/blog" className="detail-back-link">
+                <ArrowLeft size={16} /> All Articles
+              </Link>
+            </div>
             <span className="blog-page__tag blog-page__tag--accent">{post.category}</span>
             <h1 className="service-hero__title" style={{ fontFamily: "'Georgia', serif", fontStyle: 'italic', maxWidth: '800px' }}>
               {post.title}
