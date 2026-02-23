@@ -5,18 +5,14 @@ const Hero = () => {
     <section className="hero">
       {/* Video background */}
       <div className="hero__bg">
-        <video
+        <iframe
           className="hero__bg-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="/video-background.mp4"
-            type="video/mp4"
-          />
-        </video>
+          src="https://www.youtube.com/embed/k8m0SaGQ_1c?si=IUHQWGr3FEyJJSHl&start=10&autoplay=1&mute=1&loop=1&playlist=k8m0SaGQ_1c&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          title="Background video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
         <div className="hero__bg-overlay"></div>
       </div>
 
