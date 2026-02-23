@@ -1,6 +1,10 @@
 import './Hero.css';
 
-const Hero = () => {
+interface HeroProps {
+  onVideoLoad?: () => void;
+}
+
+const Hero = ({ onVideoLoad }: HeroProps) => {
   return (
     <section className="hero">
       {/* Video background */}
@@ -12,6 +16,7 @@ const Hero = () => {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          onLoad={onVideoLoad}
         />
         <div className="hero__bg-overlay"></div>
       </div>
