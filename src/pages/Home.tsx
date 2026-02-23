@@ -14,13 +14,13 @@ import LoadingScreen from '../components/LoadingScreen';
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fallback: hide loader after max 4 seconds even if iframe hasn't fired onLoad
+  // Fallback: hide loader after max 8 seconds even if video hasn't started
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 4000);
+    const timer = setTimeout(() => setIsLoading(false), 8000);
     return () => clearTimeout(timer);
   }, []);
 
-  const handleVideoLoad = () => {
+  const handleVideoReady = () => {
     setIsLoading(false);
   };
 
@@ -29,7 +29,7 @@ const Home = () => {
       <LoadingScreen isLoading={isLoading} />
       <Navbar />
       <main>
-        <Hero onVideoLoad={handleVideoLoad} />
+        <Hero onVideoReady={handleVideoReady} />
         <Services />
         <Destinations />
         <WhyChooseUs />
