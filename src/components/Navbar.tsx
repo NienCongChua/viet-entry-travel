@@ -5,6 +5,7 @@ import Button from './ui/Button';
 import './Navbar.css';
 
 const navLinks = [
+  { label: 'Services', href: '/services' },
   { label: 'Culinary Experiences', href: '/tours' },
   { label: 'Shore Excursions', href: '/excursions' },
   { label: 'Tour Packages', href: '/tours' },

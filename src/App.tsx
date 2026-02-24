@@ -11,6 +11,7 @@ import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import AboutPage from './pages/AboutPage';
 import CheckoutPage from './pages/CheckoutPage';
+import ServicesOverviewPage from './pages/ServicesOverviewPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesOverviewPage />} />
         <Route path="/tours" element={<TourPage />} />
         <Route path="/tours/:id" element={<TourDetailPage />} />
         <Route path="/excursions" element={<ExcursionsPage />} />
