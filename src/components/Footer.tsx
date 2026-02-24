@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -22,17 +22,17 @@ const Footer = () => {
               eSim connectivity for international travelers.
             </p>
             <div className="footer__contact-list">
-              <a href="mailto:hello@vietentrytravel.com" className="footer__contact-item">
+              <a href="mailto:info@vietentrytravel.com" className="footer__contact-item">
                 <Mail size={14} />
-                hello@vietentrytravel.com
+                info@vietentrytravel.com
               </a>
-              <a href="tel:+84xxxxxxxxx" className="footer__contact-item">
+              <a href="tel:+84888814595" className="footer__contact-item">
                 <Phone size={14} />
-                +84 xxx xxx xxx
+                (+84) 8888 14 595
               </a>
               <span className="footer__contact-item">
                 <MapPin size={14} />
-                Ho Chi Minh City, Vietnam
+                Hội Thịnh, Phú Thọ, Vietnam
               </span>
             </div>
           </div>
@@ -40,10 +40,10 @@ const Footer = () => {
           <div className="footer__links-group">
             <h4 className="footer__links-title">Services</h4>
             <nav className="footer__links">
-              <a href="#services" className="footer__link">Tours</a>
-              <a href="#services" className="footer__link">eVisa</a>
-              <a href="#services" className="footer__link">Transfer</a>
-              <a href="#services" className="footer__link">eSim</a>
+              <Link to="/tours" className="footer__link">Tours</Link>
+              <Link to="/services" className="footer__link">eVisa</Link>
+              <Link to="/services" className="footer__link">Transfer</Link>
+              <Link to="/services" className="footer__link">eSim</Link>
             </nav>
           </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
             <nav className="footer__links">
               <Link to="/about" className="footer__link">About Us</Link>
               <Link to="/blog" className="footer__link">Blog</Link>
-              <a href="#contact" className="footer__link">Contact</a>
+              <a href="#contact" className="footer__link">Request a Quote</a>
               <a href="#" className="footer__link">Privacy Policy</a>
             </nav>
           </div>
@@ -73,9 +73,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Viet Entry Travel. All rights reserved.
           </p>
           <div className="footer__socials">
-            <a href="#" className="footer__social" aria-label="Facebook">FB</a>
-            <a href="#" className="footer__social" aria-label="Instagram">IG</a>
-            <a href="#" className="footer__social" aria-label="TripAdvisor">TA</a>
+            <a href="https://www.facebook.com/people/Viet-Entry-Travel/61587498513447/" target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Facebook"><Facebook size={18} /></a>
+            <a href="https://www.instagram.com/vietentrytravel?igsh=MWN6YnRwemQzNXYxeg==" target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Instagram"><Instagram size={18} /></a>
           </div>
         </div>
       </div>

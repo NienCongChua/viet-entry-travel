@@ -99,10 +99,20 @@ const TransferPage = () => {
                     <input type="text" placeholder="e.g., Hanoi Old Quarter" value={formData.dropoff} onChange={(e) => setFormData({ ...formData, dropoff: e.target.value })} />
                   </div>
                 </div>
-                <div className="sp-booking__row sp-booking__row--3">
+                <div className="sp-booking__row sp-booking__row--4">
                   <div className="sp-booking__field">
-                    <label><Clock size={14} /> Date & Time</label>
-                    <input type="datetime-local" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+                    <label><Clock size={14} /> Pickup Date</label>
+                    <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+                  </div>
+                  <div className="sp-booking__field">
+                    <label><Clock size={14} /> Pickup Time</label>
+                    <select defaultValue="09:00">
+                      {Array.from({ length: 48 }, (_, i) => {
+                        const h = String(Math.floor(i / 2)).padStart(2, '0');
+                        const m = i % 2 === 0 ? '00' : '30';
+                        return <option key={i} value={`${h}:${m}`}>{h}:{m}</option>;
+                      })}
+                    </select>
                   </div>
                   <div className="sp-booking__field">
                     <label><Users size={14} /> Passengers</label>

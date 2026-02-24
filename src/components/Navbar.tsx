@@ -6,8 +6,7 @@ import './Navbar.css';
 
 const navLinks = [
   { label: 'Services', href: '/services' },
-  { label: 'Culinary Experiences', href: '/tours' },
-  { label: 'Shore Excursions', href: '/excursions' },
+  { label: 'Culinary Experiences', href: '/culinary' },
   { label: 'Tour Packages', href: '/tours' },
   { label: 'Blog', href: '/blog' },
   { label: 'About Us', href: '/about' },
@@ -32,7 +31,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   // Detect pages with white/light backgrounds (no dark hero)
-  const isLightPage = /^\/(tours|excursions)\//.test(location.pathname) || location.pathname === '/checkout';
+  const isLightPage = /^\/(tours)\//.test(location.pathname) || location.pathname === '/checkout';
   const isRoute = (href: string) => !href.startsWith('/#');
 
 
@@ -64,7 +63,7 @@ const Navbar = () => {
 
         <div className="navbar__actions">
           <Button href="#contact" variant="primary" size="sm">
-            Contact Us
+            Request a Quote
           </Button>
         </div>
 
@@ -102,7 +101,7 @@ const Navbar = () => {
             )
           )}
           <Button href="#contact" variant="primary" fullWidth>
-            Contact Us
+            Request a Quote
           </Button>
         </nav>
       </div>

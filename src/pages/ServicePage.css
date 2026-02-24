@@ -396,6 +396,10 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.sp-booking__row--4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .sp-booking__field {
   display: flex;
   flex-direction: column;
@@ -422,12 +426,14 @@
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
+  font-family: inherit;
   color: var(--color-text);
   background: var(--color-bg);
   transition: border-color var(--transition-fast);
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
-
 .sp-booking__field input:focus,
 .sp-booking__field select:focus {
   border-color: var(--color-primary);
@@ -1105,7 +1111,8 @@
     transform: translateY(-6px);
   }
   .sp-booking__row,
-  .sp-booking__row--3 {
+  .sp-booking__row--3,
+  .sp-booking__row--4 {
     grid-template-columns: 1fr;
   }
   .service-steps__grid {

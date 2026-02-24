@@ -22,8 +22,8 @@
 
 .navbar--scrolled {
   top: 14px;
-  left: max(1.5rem, calc(50% - 520px));
-  right: max(1.5rem, calc(50% - 520px));
+  left: max(1.5rem, calc(50% - 500px));
+  right: max(1.5rem, calc(50% - 500px));
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(40px) saturate(1.8);
   -webkit-backdrop-filter: blur(40px) saturate(1.8);
@@ -65,6 +65,8 @@
 .navbar__logo-img {
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   object-fit: contain;
   border-radius: var(--radius-md);
   transition: transform var(--transition-spring);
