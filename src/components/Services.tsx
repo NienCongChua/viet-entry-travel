@@ -16,7 +16,7 @@ const services = [
     icon: <FileCheck size={28} />,
     title: 'eVisa',
     description: 'Fast Vietnam eVisa processing. Submit online, approved in 1-3 days.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=600&q=80',
     highlights: ['1-3 day processing', 'Online application', '99% approval'],
     color: 'amber',
     slug: '/evisa',
@@ -37,7 +37,8 @@ const services = [
     image: 'https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=600&q=80',
     highlights: ['Instant activation', '4G/5G data', 'Affordable plans'],
     color: 'rose',
-    slug: '/esim',
+    slug: 'https://card.vietentrytravel.com',
+    external: true,
   },
 ];
 
@@ -75,9 +76,15 @@ const Services = () => {
                     <li key={h}>{h}</li>
                   ))}
                 </ul>
-                <Link to={service.slug} className="services__card-link">
-                  Learn more <ArrowRight size={14} />
-                </Link>
+                {service.external ? (
+                  <a href={service.slug} className="services__card-link" target="_blank" rel="noopener noreferrer">
+                    Learn more <ArrowRight size={14} />
+                  </a>
+                ) : (
+                  <Link to={service.slug} className="services__card-link">
+                    Learn more <ArrowRight size={14} />
+                  </Link>
+                )}
               </div>
             </div>
           ))}

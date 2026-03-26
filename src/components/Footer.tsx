@@ -43,7 +43,7 @@ const Footer = () => {
               <Link to="/tours" className="footer__link">Tours</Link>
               <Link to="/services" className="footer__link">eVisa</Link>
               <Link to="/services" className="footer__link">Transfer</Link>
-              <Link to="/services" className="footer__link">eSim</Link>
+              <a href="https://card.vietentrytravel.com" className="footer__link" target="_blank" rel="noopener noreferrer">eSim</a>
             </nav>
           </div>
 

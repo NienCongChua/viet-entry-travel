@@ -94,7 +94,8 @@ const services = [
     ],
     price: 'From US$6',
     cta: 'Buy eSIM',
-    href: '/esim',
+    href: 'https://card.vietentrytravel.com',
+    external: true,
   },
   {
     id: 'tour',
@@ -213,9 +214,15 @@ const ServicesOverviewPage = () => {
                           </li>
                         ))}
                       </ul>
-                      <Link to={svc.href} className="svc-card__cta">
-                        {svc.cta} <ArrowRight size={16} />
-                      </Link>
+                      {svc.external ? (
+                        <a href={svc.href} className="svc-card__cta" target="_blank" rel="noopener noreferrer">
+                          {svc.cta} <ArrowRight size={16} />
+                        </a>
+                      ) : (
+                        <Link to={svc.href} className="svc-card__cta">
+                          {svc.cta} <ArrowRight size={16} />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 );
