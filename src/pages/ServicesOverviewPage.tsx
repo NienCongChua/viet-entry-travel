@@ -79,7 +79,7 @@ const services = [
   },
   {
     id: 'sim',
-    title: 'Vietnam eSIM',
+    title: 'Global eSIM',
     icon: Smartphone,
     badge: 'Instant Delivery',
     image:
