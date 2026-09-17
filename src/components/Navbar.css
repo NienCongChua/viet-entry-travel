@@ -96,23 +96,23 @@
 
 /* Light variant for pages with white backgrounds */
 .navbar--light .navbar__logo-text {
-  color: #1e3a5f;
+  color: var(--color-text);
   text-shadow: none;
 }
 .navbar--light .navbar__nav {
-  background: rgba(30, 58, 95, 0.06);
+  background: rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(20px);
-  border-color: rgba(30, 58, 95, 0.1);
+  border-color: var(--color-border);
 }
 .navbar--light .navbar__link {
   color: #475569;
 }
 .navbar--light .navbar__link:hover {
   color: var(--color-primary);
-  background: rgba(30, 58, 95, 0.06);
+  background: rgba(179, 24, 32, 0.06);
 }
 .navbar--light .navbar__toggle {
-  color: #1e3a5f;
+  color: var(--color-text);
 }
 
 
@@ -166,6 +166,30 @@
   gap: 0.75rem;
 }
 
+.navbar__actions .btn {
+  height: 46px;
+  padding: 0 1.75rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(179, 24, 32, 0.35);
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.navbar__actions .btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(179, 24, 32, 0.45);
+}
+
+.navbar--scrolled .navbar__actions .btn {
+  height: 42px;
+  padding: 0 1.5rem;
+}
+
 .navbar__toggle {
   display: none;
   color: white;
@@ -185,6 +209,22 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* Backdrop for mobile menu */
+.navbar__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  animation: navbarFadeIn 0.2s ease;
+}
+
+@keyframes navbarFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Mobile Menu */
 .navbar__mobile {
   display: none;
@@ -192,16 +232,19 @@
   top: calc(100% + 8px);
   left: var(--container-padding);
   right: var(--container-padding);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: var(--glass-blur-heavy);
   -webkit-backdrop-filter: var(--glass-blur-heavy);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   transform: translateY(-10px) scale(0.98);
   opacity: 0;
   pointer-events: none;
   transition: all var(--transition-spring);
+  z-index: 999;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
 .navbar__mobile--open {
@@ -215,7 +258,7 @@
   display: flex;
   flex-direction: column;
   padding: var(--space-4);
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .navbar__mobile-link {
@@ -232,7 +275,38 @@
   background: var(--color-primary-50);
 }
 
-@media (max-width: 868px) {
+/* Intermediate screens (1025px - 1180px): Compact desktop navbar */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .navbar {
+    padding: 1rem 1.25rem;
+  }
+  .navbar__inner {
+    gap: 1rem;
+  }
+  .navbar__logo-text {
+    font-size: 1rem;
+  }
+  .navbar__link {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+  }
+  .navbar__actions .btn {
+    height: 44px;
+    padding: 0 1.45rem;
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Tablet & Mobile (<= 1024px): Switch to mobile hamburger menu */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0.85rem 1rem;
+  }
+
+  .navbar__inner {
+    gap: 1rem;
+  }
+
   .navbar__nav,
   .navbar__actions {
     display: none;
@@ -244,5 +318,51 @@
 
   .navbar__mobile {
     display: block;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .navbar--scrolled {
+    top: 10px;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .navbar--scrolled .navbar__logo-text {
+    opacity: 1;
+    width: auto;
+    overflow: visible;
+    font-size: 1rem;
+  }
+}
+
+/* Small phone screens (<= 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .navbar--scrolled {
+    top: 8px;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .navbar__logo-text {
+    font-size: 0.92rem;
+  }
+
+  .navbar__logo-img {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .navbar__mobile {
+    left: 0.5rem;
+    right: 0.5rem;
   }
 }

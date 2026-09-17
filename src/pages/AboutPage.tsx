@@ -234,7 +234,7 @@ const AboutPage = () => {
             <h2>Ready to Experience Vietnam?</h2>
             <p>Let us create a journey that's uniquely yours. Get in touch with our team today.</p>
             <div className="service-cta__actions">
-              <Button href="#contact" variant="accent" size="lg">Get Free Quote</Button>
+              <Button href="/#contact" variant="accent" size="lg">Get Free Quote</Button>
               <Link to="/tours" style={{ color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 500 }}>
                 Browse Tours <ArrowRight size={16} />
               </Link>

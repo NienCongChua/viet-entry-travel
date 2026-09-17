@@ -1,70 +1,143 @@
-/* ===== Hero — Full-screen video background ===== */
+/* ===== Hero — Cinematic Ken Burns Slider ===== */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  min-height: 640px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: var(--color-bg-dark, #0c1929);
 }
 
-/* Video background */
-.hero__bg {
+/* Background Slider */
+.hero__slider {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
-.hero__bg-video {
+.hero__slide {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  /* 16:9 cover trick — works on both portrait & landscape */
-  width: 100vw;
-  height: 56.25vw;            /* 100vw × 9/16 = maintain 16:9 */
-  min-height: 100vh;
-  min-width: 177.78vh;        /* 100vh × 16/9  = fill portrait */
-  transform: translate(-50%, -50%);
-  border: none;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
-.hero__bg-video iframe {
+.hero__slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.hero__slide-image {
   width: 100%;
   height: 100%;
-  border: none;
-  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+  transform-origin: center center;
 }
 
+/* ===== Ken Burns Effect Variations ===== */
+/* Slide 0: Ha Long Bay (Gentle Zoom-In + Pan Top-Left) */
+.hero__slide--active.hero__slide--0 .hero__slide-image {
+  animation: kenBurns0 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurns0 {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate(-1.2%, -1%);
+  }
+}
+
+/* Slide 1: Sapa (Vast Landscape Zoom-Out) */
+.hero__slide--active.hero__slide--1 .hero__slide-image {
+  animation: kenBurns1 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurns1 {
+  0% {
+    transform: scale(1.15) translate(1%, 0.8%);
+  }
+  100% {
+    transform: scale(1.03) translate(0, 0);
+  }
+}
+
+/* Slide 2: Hoi An (Warm Lantern Zoom-In + Soft Drift Right) */
+.hero__slide--active.hero__slide--2 .hero__slide-image {
+  animation: kenBurns2 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurns2 {
+  0% {
+    transform: scale(1.03) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.15) translate(1.4%, -0.8%);
+  }
+}
+
+/* Slide 3: Golden Bridge (Sculptural Zoom-Out + Drift) */
+.hero__slide--active.hero__slide--3 .hero__slide-image {
+  animation: kenBurns3 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurns3 {
+  0% {
+    transform: scale(1.14) translate(-1%, 0.5%);
+  }
+  100% {
+    transform: scale(1.04) translate(0.5%, -0.5%);
+  }
+}
+
+/* Overlay with Vignette & Depth Gradient */
 .hero__bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.15) 40%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(12, 25, 41, 0.5) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(12, 25, 41, 0.65) 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.3) 70%,
+      rgba(12, 25, 41, 0.85) 100%
+    );
 }
 
-/* Centered content */
+/* Centered Content */
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
-  max-width: 800px;
+  max-width: 860px;
   padding: 0 var(--container-padding);
   animation: heroFadeIn 1.2s ease both;
 }
 
 .hero__brand {
   font-size: var(--font-size-lg);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-accent);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   margin-bottom: var(--space-4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero__title {
@@ -75,10 +148,10 @@
   line-height: 1.15;
   color: #ffffff;
   margin-bottom: var(--space-10);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
-/* CTA buttons */
+/* CTA Buttons */
 .hero__actions {
   display: flex;
   align-items: center;
@@ -91,7 +164,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 2.4rem;
+  padding: 0.95rem 2.5rem;
   font-size: var(--font-size-base);
   font-weight: 600;
   border-radius: var(--radius-full);
@@ -99,36 +172,182 @@
   transition: all var(--transition-base);
   cursor: pointer;
   letter-spacing: 0.01em;
-  min-width: 170px;
+  min-width: 175px;
 }
 
 .hero__btn--filled {
   background: var(--color-primary);
   color: #ffffff;
   border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 16px rgba(179, 24, 32, 0.35);
 }
 
 .hero__btn--filled:hover {
   background: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(179, 24, 32, 0.45);
 }
 
 .hero__btn--outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .hero__btn--outline:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.22);
   border-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Entry animation */
+/* ===== Bottom Controls & Indicators ===== */
+.hero__controls {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+/* Destination Tag */
+.hero__location {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.45rem 1rem;
+  background: rgba(12, 25, 41, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  animation: heroBadgeIn 0.5s ease;
+}
+
+@keyframes heroBadgeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__location-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.hero__location-name {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hero__location-badge {
+  font-size: var(--font-size-xs);
+  background: rgba(78, 110, 28, 0.25);
+  color: #c9ddb0;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  border: 1px solid rgba(78, 110, 28, 0.45);
+}
+
+/* Slide Nav & Indicators */
+.hero__nav {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(12, 25, 41, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero__nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero__nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.hero__indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero__indicator {
+  width: 26px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.28);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.hero__indicator:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero__indicator--active {
+  width: 42px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero__indicator--active .hero__indicator-progress {
+  display: block;
+  height: 100%;
+  background: var(--color-primary);
+  animation: indicatorProgress 6.5s linear forwards;
+}
+
+@keyframes indicatorProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Entry Animation */
 @keyframes heroFadeIn {
   from {
     opacity: 0;
@@ -140,7 +359,19 @@
   }
 }
 
-/* ===== Responsive ===== */
+/* ===== Accessibility / Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide--active .hero__slide-image {
+    animation: none !important;
+    transform: none !important;
+  }
+  .hero__indicator-progress {
+    animation: none !important;
+    width: 100% !important;
+  }
+}
+
+/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
@@ -159,6 +390,17 @@
     width: 100%;
     max-width: 280px;
   }
+
+  .hero__controls {
+    flex-direction: column;
+    gap: var(--space-3);
+    bottom: var(--space-5);
+  }
+
+  .hero__location {
+    font-size: var(--font-size-xs);
+    padding: 0.35rem 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -167,6 +409,10 @@
   }
 
   .hero__title {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
+  }
+
+  .hero__location-badge {
+    display: none;
   }
 }

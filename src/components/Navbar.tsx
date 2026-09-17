@@ -25,10 +25,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to top on route change
+  // Scroll to top and close mobile menu on route change
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false);
   }, [location.pathname]);
+
+  // Auto-close mobile menu when resizing to desktop width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Detect pages with white/light backgrounds (no dark hero)
   const isLightPage = /^\/(tours)\//.test(location.pathname) || location.pathname === '/checkout';
@@ -62,7 +74,7 @@ const Navbar = () => {
         </nav>
 
         <div className="navbar__actions">
-          <Button href="#contact" variant="primary" size="sm">
+          <Button href="/#contact" variant="primary" size="md">
             Request a Quote
           </Button>
         </div>
@@ -100,11 +112,21 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button href="#contact" variant="primary" fullWidth>
-            Request a Quote
-          </Button>
+          <div onClick={() => setIsMobileMenuOpen(false)}>
+            <Button href="/#contact" variant="primary" fullWidth>
+              Request a Quote
+            </Button>
+          </div>
         </nav>
       </div>
+
+      {isMobileMenuOpen && (
+        <div
+          className="navbar__backdrop"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </header>
   );
 };

@@ -18,7 +18,7 @@
 .cta__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(12, 25, 41, 0.88), rgba(14, 50, 60, 0.75));
+  background: linear-gradient(135deg, rgba(20, 8, 9, 0.9), rgba(30, 42, 16, 0.82));
   z-index: 1;
 }
 
@@ -243,6 +243,22 @@
 .quote-form__submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(20, 184, 166, 0.3);
+}
+
+.quote-form__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.quote-form__spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Success state */

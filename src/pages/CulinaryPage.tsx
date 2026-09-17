@@ -1,262 +1,426 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { UtensilsCrossed, MapPin, ArrowLeft } from 'lucide-react';
+import { UtensilsCrossed, MapPin, ArrowRight, Search, Sparkles, Compass, Flame, Leaf, Droplets, Camera } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/ui/Button';
+import { regions, allSpecialties, type Specialty } from '../data/food';
 import './ServicePage.css';
 import './CulinaryPage.css';
 
-/* ── Region data ── */
-const regions = [
-  {
-    id: 'north',
-    name: 'Miền Bắc',
-    subtitle: 'Đồi núi & Đồng bằng Bắc Bộ',
-    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
-    description: 'Ẩm thực miền Bắc tinh tế, thanh nhã với hương vị truyền thống ngàn năm từ Hà Nội đến những vùng cao Tây Bắc.',
-    specialties: [
-      {
-        name: 'Phở Hà Nội',
-        slug: 'pho-ha-noi',
-        image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80',
-        description: 'Nước dùng trong vắt, vị ngọt thanh từ xương ống hầm qua đêm. Bánh phở mềm mướt, thịt bò tái hồng, rắc hành lá và hạt tiêu — tinh hoa ẩm thực Hà thành.',
-        origin: 'Hà Nội',
-      },
-      {
-        name: 'Bún Chả',
-        slug: 'bun-cha',
-        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
-        description: 'Chả thịt nướng than hoa thơm lừng, bún trắng mát, nước mắm pha chua ngọt với đu đủ xanh và tỏi ớt. Hương vị đặc trưng vỉa hè phố cổ.',
-        origin: 'Hà Nội',
-      },
-      {
-        name: 'Bánh Cuốn Thanh Trì',
-        slug: 'banh-cuon-thanh-tri',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80',
-        description: 'Lớp bánh mỏng tang tráng tay, nhân thịt mộc nhĩ, chấm nước mắm cà cuống thơm nồng — món sáng huyền thoại của người Hà Nội.',
-        origin: 'Hà Nội',
-      },
-      {
-        name: 'Thắng Cố',
-        slug: 'thang-co',
-        image: 'https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80',
-        description: 'Món lẩu đặc trưng vùng cao Tây Bắc, nấu từ nội tạng và xương ngựa với thảo quả, gừng. Thưởng thức giữa chợ phiên sương mù Sapa.',
-        origin: 'Sapa · Tây Bắc',
-      },
-      {
-        name: 'Cơm Lam',
-        slug: 'com-lam',
-        image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80',
-        description: 'Gạo nếp nương dẻo thơm, nhồi trong ống tre non rồi nướng trên than hồng. Hương tre quyện cùng nếp mới — đặc sản đồi núi phía Bắc.',
-        origin: 'Hà Giang · Tây Bắc',
-      },
-    ],
-  },
-  {
-    id: 'central',
-    name: 'Miền Trung',
-    subtitle: 'Cung đình, ven biển & Tây Nguyên',
-    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80',
-    description: 'Miền Trung nổi tiếng với ẩm thực cay nồng, tinh xảo — từ cung đình Huế đến phố cổ Hội An và bờ biển Nha Trang.',
-    specialties: [
-      {
-        name: 'Bún Bò Huế',
-        slug: 'bun-bo-hue',
-        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
-        description: 'Nước lèo sánh đỏ từ sả, mắm ruốc, ớt chưng — cay nồng đậm đà. Bún to sợi, thịt bò bắp, giò heo, chả cua. Hương vị xứ Huế không lẫn vào đâu.',
-        origin: 'Huế',
-      },
-      {
-        name: 'Cao Lầu Hội An',
-        slug: 'cao-lau-hoi-an',
-        image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80',
-        description: 'Sợi mì vàng dai giòn ngâm nước tro, thịt xá xíu, rau sống tươi, tóp mỡ giòn rụm. Chỉ có ở Hội An — vì nước giếng Bá Lê tạo nên sợi mì độc nhất.',
-        origin: 'Hội An',
-      },
-      {
-        name: 'Mì Quảng',
-        slug: 'mi-quang',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80',
-        description: 'Mì sợi vàng nghệ, nước lèo ít vừa tới, tôm, thịt, trứng cút, đậu phộng rang — hương vị đời thường đặc trưng Quảng Nam.',
-        origin: 'Đà Nẵng · Quảng Nam',
-      },
-      {
-        name: 'Bánh Bèo, Bánh Nậm, Bánh Lọc',
-        slug: 'banh-beo-nam-loc',
-        image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&q=80',
-        description: 'Bộ ba bánh Huế — bánh bèo chén nhỏ xinh, bánh nậm gói lá chuối, bánh lọc trong suốt. Tinh hoa ẩm thực cung đình Nguyễn, nhỏ nhắn nhưng đầy nghệ thuật.',
-        origin: 'Huế',
-      },
-      {
-        name: 'Hải Sản Nha Trang',
-        slug: 'hai-san-nha-trang',
-        image: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=600&q=80',
-        description: 'Tôm hùm nướng mỡ hành, ốc nhảy, cá bớp nấu lẩu — tất cả tươi sống từ thuyền đánh cá buổi sáng, thưởng thức ngay bên bãi biển.',
-        origin: 'Nha Trang',
-      },
-    ],
-  },
-  {
-    id: 'south',
-    name: 'Miền Nam',
-    subtitle: 'Sài Gòn & Đồng Bằng Sông Cửu Long',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80',
-    description: 'Ẩm thực miền Nam phóng khoáng, ngọt ngào với ảnh hưởng đa văn hóa — từ phố xá Sài Gòn đến miệt vườn sông nước Cửu Long.',
-    specialties: [
-      {
-        name: 'Bánh Mì Sài Gòn',
-        slug: 'banh-mi-sai-gon',
-        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
-        description: 'Vỏ giòn tan, nhân đầy ú ụ — pa-tê, chả, dưa leo, đồ chua, rau mùi, nước sốt đặc biệt. Món "fast food" Việt Nam chinh phục thế giới.',
-        origin: 'Sài Gòn',
-      },
-      {
-        name: 'Hủ Tíu Nam Vang',
-        slug: 'hu-tiu-nam-vang',
-        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',
-        description: 'Nước lèo xương heo trong veo, sợi hủ tíu dai mềm, tôm, thịt băm, gan. Ăn khô hay nước — đặc sản bình dân Sài Gòn từ ảnh hưởng Hoa-Khmer.',
-        origin: 'Sài Gòn',
-      },
-      {
-        name: 'Cá Kho Tộ',
-        slug: 'ca-kho-to',
-        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
-        description: 'Cá lóc đồng kho trong tộ đất, nước màu đường thốt nốt, tiêu, tỏi, ớt — mặn ngọt đậm đà, ăn với cơm trắng nóng hổi. Món nhà quê miền Tây.',
-        origin: 'Đồng Bằng Sông Cửu Long',
-      },
-      {
-        name: 'Bánh Xèo Miền Tây',
-        slug: 'banh-xeo-mien-tay',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80',
-        description: 'Bánh to bự bằng chảo gang, nhân tôm, thịt, giá đậu, nấm. Cuốn với rau rừng đủ loại, chấm nước mắm pha — tiếng "xèo" khi đổ bánh là nhạc hiệu miền Tây.',
-        origin: 'Cần Thơ · Miền Tây',
-      },
-      {
-        name: 'Trái Cây Chợ Nổi',
-        slug: 'trai-cay-cho-noi',
-        image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80',
-        description: 'Sầu riêng, măng cụt, chôm chôm, vú sữa, mãng cầu — trái cây nhiệt đới tươi mọng mua thẳng từ ghe trên chợ nổi Cái Răng lúc bình minh.',
-        origin: 'Cần Thơ · Chợ Nổi',
-      },
-    ],
-  },
-];
+const CATEGORIES = [
+  'All',
+  'Noodles & Broths',
+  'Street Grills & Rolls',
+  'Steamed & Rolled',
+  'Royal & Imperial',
+  'Rice & Claypots',
+  'Highland Hearth',
+  'Crispy Crepes',
+  'Pastries & Drinks',
+] as const;
 
 const CulinaryPage = () => {
-  const [activeRegion, setActiveRegion] = useState('north');
-  const currentRegion = regions.find((r) => r.id === activeRegion) || regions[0];
+  const [selectedRegion, setSelectedRegion] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [activePhilosophy, setActivePhilosophy] = useState<number>(0);
+
+  const filteredDishes = useMemo(() => {
+    return allSpecialties.filter((dish: Specialty) => {
+      // Region filter
+      if (selectedRegion !== 'all') {
+        const regionObj = regions.find((r) => r.id === selectedRegion);
+        if (!regionObj?.specialties.some((s) => s.slug === dish.slug)) {
+          return false;
+        }
+      }
+      // Category filter
+      if (selectedCategory !== 'All' && dish.category !== selectedCategory) {
+        return false;
+      }
+      // Search query
+      if (searchQuery.trim() !== '') {
+        const q = searchQuery.toLowerCase();
+        const matchesName = dish.name.toLowerCase().includes(q);
+        const matchesDesc = dish.description.toLowerCase().includes(q);
+        const matchesProvince = dish.province.toLowerCase().includes(q);
+        const matchesIngredients = dish.keyIngredients.some((ing) => ing.toLowerCase().includes(q));
+        if (!matchesName && !matchesDesc && !matchesProvince && !matchesIngredients) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [selectedRegion, selectedCategory, searchQuery]);
+
+  const currentRegionMeta = regions.find((r) => r.id === selectedRegion);
+
+  const philosophies = [
+    {
+      id: 0,
+      title: 'The 5 Elemental Tastes (Ngũ Hành)',
+      icon: <Flame size={20} />,
+      tagline: 'Balance of Wood, Fire, Earth, Metal & Water',
+      description:
+        'Every master Vietnamese recipe harmonizes five taste sensations: Wood (Sour/Lime), Fire (Bitter/Herbs), Earth (Sweet/Cane & Coconut), Metal (Spicy/Chili & Ginger), and Water (Salty/Fish Sauce). This cosmic equilibrium ensures food is not only delicious, but nourishes body and spirit.',
+      highlights: ['Hot foods paired with cooling herbs', 'Digestive herbs balancing rich meats', 'Zero heavy dairy or excess grease'],
+    },
+    {
+      id: 1,
+      title: 'The Fresh Botanical Terroir (Rau Thơm)',
+      icon: <Leaf size={20} />,
+      tagline: 'A Living Herb Garden on Every Dining Table',
+      description:
+        'Unlike cuisines where herbs are dissolved during simmering, Vietnamese dining serves a towering bouquet of raw, freshly washed botanicals: Vietnamese balm, purple perilla, Tra Que coriander, sawtooth culantro, and wild water lily stems. Diners curate their own custom herbal profile with every single bite.',
+      highlights: ['Tra Que organic village heritage', 'Uncooked botanicals preserving essential oils', 'Distinct wild herbs for each region'],
+    },
+    {
+      id: 2,
+      title: 'The Artisanal Fermented Soul (Nước Mắm)',
+      icon: <Droplets size={20} />,
+      tagline: 'Barrel-Aged Liquid Umami',
+      description:
+        'Vietnamese gastronomy is anchored by artisanal fish sauce (nước mắm) and fermented regional pastes. From wild black-anchovy barrels aged 12 months in Phu Quoc and Phan Thiet, to royal shrimp paste (mắm ruốc) in Hue and freshwater fish mắm in the Mekong floodplains, fermentation provides profound savory depth.',
+      highlights: ['Pure black anchovies & sea salt only', 'Natural fermentation in wooden vats', 'Foundation of all dipping sauces (nước chấm)'],
+    },
+  ];
 
   return (
     <>
       <Navbar />
-      <main>
-        {/* Hero */}
+      <main className="culinary-main">
+        {/* Cinematic Hero */}
         <section className="service-hero culinary-hero">
           <div className="service-hero__bg">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80" alt="Vietnamese Cuisine" />
+            <img src="/images/food/pho-ha-noi.jpg" alt="Vietnamese Gastronomic Heritage" />
             <div className="service-hero__bg-overlay"></div>
           </div>
           <div className="service-hero__content">
-            <span className="service-hero__badge"><UtensilsCrossed size={16} /> Culinary Experiences</span>
+            <span className="service-hero__badge">
+              <UtensilsCrossed size={15} /> Cultural Gastronomy Experience
+            </span>
             <h1 className="service-hero__title" style={{ fontFamily: "'Georgia', serif", fontStyle: 'italic' }}>
-              Hương Vị Việt Nam
+              Flavors of Vietnam
             </h1>
             <p className="service-hero__subtitle">
-              Khám phá ẩm thực Việt từ đồi núi Tây Bắc đến sông nước Cửu Long — mỗi vùng miền, một câu chuyện trên bàn ăn.
+              An extraordinary culinary voyage across 3 climate zones and 15 gastronomic provinces. Discover how indigenous herbs, ancient imperial courts, and river waters shaped one of the world's most revered cuisines.
             </p>
-          </div>
-        </section>
 
-        {/* Highlights */}
-        <section className="culinary-highlights">
-          <div className="container">
-            <div className="culinary-highlights__grid">
-              <div className="culinary-highlights__item">
-                <div className="culinary-highlights__icon">🍜</div>
-                <h4>Street Food</h4>
-                <p>Phở, bún chả, bánh mì — huyền thoại vỉa hè</p>
+            {/* Quick Gastronomic Stats Bar */}
+            <div className="culinary-stats-bar">
+              <div className="culinary-stat-pill">
+                <strong>32</strong>
+                <span>Master Dishes</span>
               </div>
-              <div className="culinary-highlights__item">
-                <div className="culinary-highlights__icon">🏔️</div>
-                <h4>Highland Cuisine</h4>
-                <p>Thắng cố, cơm lam — hương vị núi rừng</p>
+              <div className="culinary-stat-divider"></div>
+              <div className="culinary-stat-pill">
+                <strong>15</strong>
+                <span>Provinces</span>
               </div>
-              <div className="culinary-highlights__item">
-                <div className="culinary-highlights__icon">👑</div>
-                <h4>Royal Cuisine</h4>
-                <p>Ẩm thực cung đình Huế tinh xảo</p>
+              <div className="culinary-stat-divider"></div>
+              <div className="culinary-stat-pill">
+                <strong>3</strong>
+                <span>Culinary Terroirs</span>
               </div>
-              <div className="culinary-highlights__item">
-                <div className="culinary-highlights__icon">🦐</div>
-                <h4>Coastal & Delta</h4>
-                <p>Hải sản tươi sống, trái cây nhiệt đới</p>
+              <div className="culinary-stat-divider"></div>
+              <div className="culinary-stat-pill">
+                <strong>1000+</strong>
+                <span>Years Heritage</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Region Selector */}
-        <section className="culinary-regions section">
+        {/* The 3 Pillars of Gastronomy Philosophy */}
+        <section className="culinary-philosophy-section">
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-              <span className="section-label">✦ Chọn Vùng Miền</span>
-              <h2 className="section-title">Khám Phá Đặc Sản Từng Vùng</h2>
+            <div className="culinary-section-heading text-center">
+              <span className="section-label">✦ Gastronomic Heritage</span>
+              <h2 className="section-title">The Three Pillars of Vietnamese Taste</h2>
+              <p className="section-subtitle">
+                Rooted in ancient Taoist philosophy and rich tropical biodiversity, Vietnamese dining is an art of delicate balance rather than heavy seasoning.
+              </p>
             </div>
 
-            {/* Region tabs */}
-            <div className="culinary-region-tabs">
+            <div className="culinary-philosophy-grid">
+              <div className="culinary-philosophy-nav">
+                {philosophies.map((p, idx) => (
+                  <button
+                    key={p.id}
+                    className={`culinary-philosophy-btn ${activePhilosophy === idx ? 'culinary-philosophy-btn--active' : ''}`}
+                    onClick={() => setActivePhilosophy(idx)}
+                  >
+                    <div className="culinary-philosophy-btn__icon">{p.icon}</div>
+                    <div className="culinary-philosophy-btn__text">
+                      <h4>{p.title}</h4>
+                      <span>{p.tagline}</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              <div className="culinary-philosophy-display">
+                <div className="culinary-philosophy-card">
+                  <div className="culinary-philosophy-card__header">
+                    <span className="culinary-philosophy-badge">
+                      <Sparkles size={14} /> Philosophy Pillar {activePhilosophy + 1}
+                    </span>
+                    <h3>{philosophies[activePhilosophy].title}</h3>
+                    <p className="culinary-philosophy-lead">{philosophies[activePhilosophy].description}</p>
+                  </div>
+                  <div className="culinary-philosophy-card__list">
+                    {philosophies[activePhilosophy].highlights.map((h, i) => (
+                      <div key={i} className="culinary-philosophy-item">
+                        <div className="culinary-philosophy-dot"></div>
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Regional Terroir Navigator & Dish Explorer */}
+        <section className="culinary-explorer-section">
+          <div className="container">
+            <div className="culinary-section-heading text-center">
+              <span className="section-label">✦ Regional Gastronomy</span>
+              <h2 className="section-title">Explore Regional Specialties by Province</h2>
+              <p className="section-subtitle">
+                Filter by climate terroir, food style, or search your favorite ingredients. Every specialty features verified photography, traditional recipes, and local insider tasting etiquette.
+              </p>
+            </div>
+
+            {/* Region Selector Tabs */}
+            <div className="culinary-macro-tabs">
+              <button
+                className={`culinary-macro-tab ${selectedRegion === 'all' ? 'culinary-macro-tab--active' : ''}`}
+                onClick={() => setSelectedRegion('all')}
+              >
+                <Compass size={18} /> All Vietnam ({allSpecialties.length})
+              </button>
               {regions.map((r) => (
                 <button
                   key={r.id}
-                  className={`culinary-region-tab ${activeRegion === r.id ? 'culinary-region-tab--active' : ''}`}
-                  onClick={() => setActiveRegion(r.id)}
+                  className={`culinary-macro-tab ${selectedRegion === r.id ? 'culinary-macro-tab--active' : ''}`}
+                  onClick={() => setSelectedRegion(r.id)}
                 >
-                  <img src={r.image} alt={r.name} className="culinary-region-tab__img" />
+                  <img src={r.image} alt={r.name} className="culinary-macro-tab__thumb" />
                   <div>
                     <strong>{r.name}</strong>
-                    <span>{r.subtitle}</span>
+                    <span>{r.provinces.length} Provinces · {r.specialties.length} Dishes</span>
                   </div>
                 </button>
               ))}
             </div>
 
-            {/* Region intro */}
-            <div className="culinary-region-intro">
-              <p>{currentRegion.description}</p>
+            {/* Current Region Description Banner */}
+            {currentRegionMeta && (
+              <div className="culinary-region-banner">
+                <div className="culinary-region-banner__text">
+                  <h3>{currentRegionMeta.name} — {currentRegionMeta.subtitle}</h3>
+                  <p>{currentRegionMeta.description}</p>
+                </div>
+                <div className="culinary-region-banner__provinces">
+                  <span className="culinary-provinces-label">Key Culinary Hubs:</span>
+                  {currentRegionMeta.provinces.map((prov) => (
+                    <span key={prov} className="culinary-province-pill">
+                      <MapPin size={11} /> {prov}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Search & Category Filter Bar */}
+            <div className="culinary-filter-bar">
+              <div className="culinary-search-wrap">
+                <Search size={16} className="culinary-search-icon" />
+                <input
+                  type="text"
+                  placeholder="Search by dish name, province, or ingredient (e.g. Hanoi, Crab, Turmeric, Pho)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="culinary-search-input"
+                />
+                {searchQuery && (
+                  <button className="culinary-search-clear" onClick={() => setSearchQuery('')}>✕</button>
+                )}
+              </div>
+
+              {/* Category Pills */}
+              <div className="culinary-category-pills">
+                {CATEGORIES.map((cat) => (
+                  <button
+                    key={cat}
+                    className={`culinary-cat-pill ${selectedCategory === cat ? 'culinary-cat-pill--active' : ''}`}
+                    onClick={() => setSelectedCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Specialties grid */}
-            <div className="culinary-specialties">
-              {currentRegion.specialties.map((dish) => (
-                <Link key={dish.name} to={`/culinary/${dish.slug}`} className="culinary-dish-card">
-                  <div className="culinary-dish-card__image">
-                    <img src={dish.image} alt={dish.name} />
-                    <div className="culinary-dish-card__image-overlay"></div>
-                    <span className="culinary-dish-card__origin">
-                      <MapPin size={11} /> {dish.origin}
-                    </span>
+            {/* Results Counter */}
+            <div className="culinary-results-meta">
+              <span>Showing <strong>{filteredDishes.length}</strong> authentic Vietnamese specialties</span>
+              {(selectedRegion !== 'all' || selectedCategory !== 'All' || searchQuery !== '') && (
+                <button
+                  className="culinary-reset-btn"
+                  onClick={() => {
+                    setSelectedRegion('all');
+                    setSelectedCategory('All');
+                    setSearchQuery('');
+                  }}
+                >
+                  Reset all filters
+                </button>
+              )}
+            </div>
+
+            {/* Dishes Grid */}
+            {filteredDishes.length === 0 ? (
+              <div className="culinary-empty-state">
+                <p>No culinary specialties matched your search. Try changing the keywords or clearing active filters.</p>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSelectedRegion('all');
+                    setSelectedCategory('All');
+                    setSearchQuery('');
+                  }}
+                >
+                  View All Specialties
+                </Button>
+              </div>
+            ) : (
+              <div className="culinary-specialties-grid">
+                {filteredDishes.map((dish) => (
+                  <Link key={dish.slug} to={`/culinary/${dish.slug}`} className="culinary-card">
+                    <div className="culinary-card__media">
+                      <img src={dish.image} alt={dish.name} loading="lazy" />
+                      <div className="culinary-card__overlay"></div>
+                      <div className="culinary-card__badges">
+                        <span className="culinary-badge culinary-badge--province">
+                          <MapPin size={11} /> {dish.province}
+                        </span>
+                        <span className="culinary-badge culinary-badge--photos">
+                          <Camera size={11} /> {dish.gallery.length} Photos
+                        </span>
+                      </div>
+                      <span className="culinary-card__category">{dish.category}</span>
+                    </div>
+
+                    <div className="culinary-card__body">
+                      <h3 className="culinary-card__title">{dish.name}</h3>
+                      <p className="culinary-card__desc">{dish.description}</p>
+
+                      {/* Flavor Bar Miniature */}
+                      <div className="culinary-card__flavors">
+                        <div className="culinary-flavor-dot-group">
+                          <span className="culinary-flavor-label">Savory:</span>
+                          <span className="culinary-flavor-meter">{'★'.repeat(dish.flavorProfile.savory)}{'☆'.repeat(5 - dish.flavorProfile.savory)}</span>
+                        </div>
+                        <div className="culinary-flavor-dot-group">
+                          <span className="culinary-flavor-label">Spicy:</span>
+                          <span className="culinary-flavor-meter">{'★'.repeat(dish.flavorProfile.spicy)}{'☆'.repeat(5 - dish.flavorProfile.spicy)}</span>
+                        </div>
+                      </div>
+
+                      <div className="culinary-card__footer">
+                        <span className="culinary-card__action">
+                          Explore Story & Recipe <ArrowRight size={14} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Gastronomic Terroir Journey Timeline */}
+        <section className="culinary-journey-section">
+          <div className="container">
+            <div className="culinary-section-heading text-center">
+              <span className="section-label">✦ The Gastronomic Journey</span>
+              <h2 className="section-title">The Culinary Axis from North to South</h2>
+              <p className="section-subtitle">
+                Traveling down Vietnam's S-shaped coastline is an exhilarating evolution of flavor profiles and indigenous cooking methods.
+              </p>
+            </div>
+
+            <div className="culinary-timeline-grid">
+              <div className="culinary-timeline-step">
+                <div className="culinary-timeline-step__marker">1</div>
+                <div className="culinary-timeline-step__card">
+                  <span className="culinary-timeline-region">Northern Vietnam</span>
+                  <h4>Purity, Subtlety & Clear Broths</h4>
+                  <p>
+                    Influenced by cooler temperate seasons and ancient Confucian heritage, northern cooking emphasizes clean umami, crystal broths, and restrained seasoning without excessive chili or sugar.
+                  </p>
+                  <div className="culinary-timeline-tags">
+                    <span>Charred Ginger</span>
+                    <span>Dill & Galangal</span>
+                    <span>Bone Broth Purity</span>
                   </div>
-                  <div className="culinary-dish-card__body">
-                    <h3 className="culinary-dish-card__name">{dish.name}</h3>
-                    <p className="culinary-dish-card__desc">{dish.description}</p>
+                </div>
+              </div>
+
+              <div className="culinary-timeline-step">
+                <div className="culinary-timeline-step__marker">2</div>
+                <div className="culinary-timeline-step__card">
+                  <span className="culinary-timeline-region">Central Vietnam</span>
+                  <h4>Royal Splendor & Unapologetic Spice</h4>
+                  <p>
+                    Home of the Nguyen Dynasty imperial citadel in Hue and the ancient merchant harbor of Hoi An. Central cuisine is renowned for miniature intricate presentation, fiery bird's-eye chilies, and pungent fermented shrimp essence.
+                  </p>
+                  <div className="culinary-timeline-tags">
+                    <span>Fermented Shrimp (Mắm Ruốc)</span>
+                    <span>Fiery Chilies</span>
+                    <span>Royal Ceremonial Snacks</span>
                   </div>
-                </Link>
-              ))}
+                </div>
+              </div>
+
+              <div className="culinary-timeline-step">
+                <div className="culinary-timeline-step__marker">3</div>
+                <div className="culinary-timeline-step__card">
+                  <span className="culinary-timeline-region">Southern Vietnam</span>
+                  <h4>Abundance, Coconut & River Bounty</h4>
+                  <p>
+                    Basked in year-round tropical sunshine and fertile Mekong silt. Southern food is bold, sweet-savory, and lavishly enriched with fresh coconut milk, wild river flowers, and gigantic crispy street crepes.
+                  </p>
+                  <div className="culinary-timeline-tags">
+                    <span>Fresh Coconut Milk</span>
+                    <span>Wild River Flora</span>
+                    <span>Giant Crispy Bánh Xèo</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Tailored Culinary Consultation CTA */}
         <section className="service-cta culinary-cta">
           <div className="container">
-            <h2>Trải Nghiệm Ẩm Thực Việt Nam</h2>
-            <p>Hãy để chúng tôi đưa bạn đi qua những hương vị đặc sắc nhất ba miền.</p>
+            <h2>Experience Vietnamese Gastronomy in Person</h2>
+            <p>
+              Looking for a private street food safari through Hanoi's ancient guild alleys, an imperial royal dining banquet in Hue, or a sunrise boat breakfast at Cai Rang floating market? Our culinary tour specialists curate bespoke private gastronomic journeys tailored directly to your tastes.
+            </p>
             <div className="service-cta__actions">
-              <Button href="#contact" variant="accent" size="lg">Liên Hệ Tư Vấn</Button>
-              <Link to="/" style={{ color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 500 }}>
-                <ArrowLeft size={16} /> Trang Chủ
-              </Link>
+              <Button href="https://wa.me/84338649908" variant="accent" size="lg">
+                Chat via WhatsApp (+84 3386 49908)
+              </Button>
+              <Button href="/#contact" variant="outline" size="lg" className="culinary-outline-btn">
+                Request Culinary Consultation
+              </Button>
             </div>
           </div>
         </section>

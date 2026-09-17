@@ -203,7 +203,7 @@ const ExcursionsPage = () => {
                     <p className="sp-product-card__desc">{exc.description}</p>
                     <div className="sp-product-card__footer">
                       <span className="sp-product-card__duration"><Clock size={14} /> {exc.duration}</span>
-                      <span className="sp-product-card__price">From <strong>US${exc.price.toFixed(2)}</strong></span>
+                      <span className="sp-product-card__price" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>Quote on Request</span>
                     </div>
                   </div>
                 </Link>
@@ -245,7 +245,7 @@ const ExcursionsPage = () => {
             <h2>Book Your Shore Excursion</h2>
             <p>Curated cruise port tours with guaranteed on-time return.</p>
             <div className="service-cta__actions">
-              <Button href="#contact" variant="accent" size="lg">Inquire Now</Button>
+              <Button href="/#contact" variant="accent" size="lg">Inquire Now</Button>
               <Link to="/" style={{ color: 'rgba(255,255,255,0.7)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 500 }}>
                 <ArrowLeft size={16} /> Back to Home
               </Link>

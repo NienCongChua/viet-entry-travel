@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
+import WhatsAppIcon from './ui/WhatsAppIcon';
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from '../utils/whatsapp';
 import './Footer.css';
 
 const Footer = () => {
@@ -26,13 +28,23 @@ const Footer = () => {
                 <Mail size={14} />
                 info@vietentrytravel.com
               </a>
-              <a href="tel:+84888814595" className="footer__contact-item">
+              <a
+                href={getWhatsAppUrl("Hello Viet Entry Travel, I would like to inquire about your travel services.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__contact-item"
+                style={{ color: '#25d366' }}
+              >
+                <WhatsAppIcon size={14} />
+                WhatsApp: {WHATSAPP_DISPLAY}
+              </a>
+              <a href="tel:+84338649908" className="footer__contact-item">
                 <Phone size={14} />
-                (+84) 8888 14 595
+                (+84) 3386 49 908
               </a>
               <span className="footer__contact-item">
                 <MapPin size={14} />
-                Hội Thịnh, Phú Thọ, Vietnam
+                Hoi Thinh, Phu Tho, Vietnam
               </span>
             </div>
           </div>
@@ -41,9 +53,10 @@ const Footer = () => {
             <h4 className="footer__links-title">Services</h4>
             <nav className="footer__links">
               <Link to="/tours" className="footer__link">Tours</Link>
-              <Link to="/services" className="footer__link">eVisa</Link>
-              <Link to="/services" className="footer__link">Transfer</Link>
-              <a href="https://card.vietentrytravel.com" className="footer__link" target="_blank" rel="noopener noreferrer">eSim</a>
+              <Link to="/evisa" className="footer__link">eVisa</Link>
+              <Link to="/transfer" className="footer__link">Transfer</Link>
+              <Link to="/esim" className="footer__link">eSim</Link>
+              <Link to="/services" className="footer__link">All Services</Link>
             </nav>
           </div>
 
@@ -62,7 +75,7 @@ const Footer = () => {
             <nav className="footer__links">
               <Link to="/about" className="footer__link">About Us</Link>
               <Link to="/blog" className="footer__link">Blog</Link>
-              <a href="#contact" className="footer__link">Request a Quote</a>
+              <a href="/#contact" className="footer__link">Request a Quote</a>
               <a href="#" className="footer__link">Privacy Policy</a>
             </nav>
           </div>

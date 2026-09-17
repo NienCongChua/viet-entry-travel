@@ -1,65 +1,23 @@
-import { Clock, MapPin, Users, Check, ArrowRight } from 'lucide-react';
-import Button from './ui/Button';
+import { Link } from 'react-router-dom';
+import { Clock, Users, Check, ArrowRight, Send } from 'lucide-react';
+import { tours } from '../data/tours';
 import './PopularTours.css';
 
-const tours = [
-  {
-    name: 'Northern Explorer',
-    route: 'Hanoi → Sapa → Ha Long Bay',
-    duration: '5 Days / 4 Nights',
-    groupSize: 'Up to 12',
-    price: '$459',
-    priceNote: 'per person',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80',
-    highlights: [
-      'Old Quarter walking tour',
-      'Sapa rice terrace trek',
-      'Ha Long overnight cruise',
-      'Homestay experience',
-      'All transfers included',
-    ],
-    featured: false,
-    tag: null,
-  },
-  {
-    name: 'Central Heritage',
-    route: 'Da Nang → Hoi An → Hue',
-    duration: '4 Days / 3 Nights',
-    groupSize: 'Up to 10',
-    price: '$389',
-    priceNote: 'per person',
-    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80',
-    highlights: [
-      'Golden Bridge Ba Na Hills',
-      'Hoi An night market',
-      'Imperial City tour',
-      'Cooking class',
-      'Beach day in Da Nang',
-    ],
-    featured: true,
-    tag: 'Most Popular',
-  },
-  {
-    name: 'Southern Adventure',
-    route: 'HCMC → Mekong → Phu Quoc',
-    duration: '6 Days / 5 Nights',
-    groupSize: 'Up to 8',
-    price: '$549',
-    priceNote: 'per person',
-    image: 'https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80',
-    highlights: [
-      'Cu Chi Tunnels',
-      'Mekong Delta boat trip',
-      'Floating markets',
-      'Phu Quoc island',
-      'Sunset fishing tour',
-    ],
-    featured: false,
-    tag: null,
-  },
-];
+const regionLabel: Record<string, string> = {
+  north: 'Northern Vietnam',
+  central: 'Central Vietnam',
+  south: 'Southern Vietnam',
+  all: 'Nationwide',
+};
+
+const featuredIds = [1, 10, 17];
+const mostPopularId = 10;
 
 const PopularTours = () => {
+  const featured = featuredIds
+    .map((id) => tours.find((t) => t.id === id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t));
+
   return (
     <section className="popular-tours section" id="tours">
       <div className="container">
@@ -72,24 +30,24 @@ const PopularTours = () => {
         </div>
 
         <div className="popular-tours__grid">
-          {tours.map((tour, idx) => (
-            <div
-              key={tour.name}
-              className={`popular-tours__card ${tour.featured ? 'popular-tours__card--featured' : ''}`}
-              style={{ animationDelay: `${idx * 0.12}s` }}
+          {featured.map((tour, idx) => (
+            <Link
+              key={tour.id}
+              to={`/tours/${tour.id}`}
+              className={`popular-tours__card ${tour.id === mostPopularId ? 'popular-tours__card--featured' : ''}`}
+              style={{ animationDelay: `${idx * 0.12}s`, textDecoration: 'none', color: 'inherit' }}
             >
               {/* Image header */}
               <div className="popular-tours__card-image">
-                <img src={tour.image} alt={tour.name} />
+                <img src={tour.image} alt={tour.title} />
                 <div className="popular-tours__card-image-overlay"></div>
-                {tour.tag && (
-                  <span className="popular-tours__tag glass-card">{tour.tag}</span>
+                {tour.id === mostPopularId && (
+                  <span className="popular-tours__tag glass-card">Most Popular</span>
                 )}
                 <div className="popular-tours__card-image-info">
-                  <h3 className="popular-tours__card-name">{tour.name}</h3>
+                  <h3 className="popular-tours__card-name">{tour.title.split(' — ')[0]}</h3>
                   <p className="popular-tours__card-route">
-                    <MapPin size={12} />
-                    {tour.route}
+                    {regionLabel[tour.region]} · {tour.experienceType}
                   </p>
                 </div>
               </div>
@@ -100,13 +58,15 @@ const PopularTours = () => {
                   <span><Users size={14} /> {tour.groupSize}</span>
                 </div>
 
-                <div className="popular-tours__price">
-                  <span className="popular-tours__price-value">{tour.price}</span>
-                  <span className="popular-tours__price-note">{tour.priceNote}</span>
+                <div className="popular-tours__price" style={{ borderBottom: 'none', paddingBottom: '0.25rem' }}>
+                  <span className="popular-tours__price-value" style={{ fontSize: '1.05rem', color: 'var(--color-primary-700)' }}>
+                    Bespoke Journey
+                  </span>
+                  <span className="popular-tours__price-note">Handcrafted itinerary</span>
                 </div>
 
                 <ul className="popular-tours__highlights">
-                  {tour.highlights.map((h) => (
+                  {tour.highlights.slice(0, 5).map((h) => (
                     <li key={h}>
                       <Check size={14} className="popular-tours__check" />
                       {h}
@@ -114,20 +74,26 @@ const PopularTours = () => {
                   ))}
                 </ul>
 
-                <Button
-                  href="#contact"
-                  variant={tour.featured ? 'primary' : 'outline'}
-                  fullWidth
-                >
-                  Book This Tour <ArrowRight size={14} />
-                </Button>
+                <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+                  <Link
+                    to={`/tours/${tour.id}#contact`}
+                    className="btn btn--accent btn--md"
+                    style={{ flex: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem', textDecoration: 'none' }}
+                  >
+                    <Send size={13} /> Request a Quote
+                  </Link>
+                  <span className="btn btn--outline btn--md" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem' }}>
+                    Details <ArrowRight size={13} />
+                  </span>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <p className="popular-tours__note">
-          All tours are fully customizable. <a href="#contact">Contact us</a> for a personalized itinerary.
+          Browse all <Link to="/tours">{tours.length} tour packages</Link> or{' '}
+          <a href="/#contact">contact us</a> for a personalized itinerary.
         </p>
       </div>
     </section>

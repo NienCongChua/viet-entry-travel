@@ -6,56 +6,56 @@ const destinations = [
     name: 'Ha Long Bay',
     region: 'North',
     description: 'Thousands of limestone islands in emerald waters',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80',
+    image: '/images/destinations/halong-bay.jpg',
     size: 'large',
   },
   {
     name: 'Hoi An',
     region: 'Central',
-    description: 'Lantern-lit ancient town',
-    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80',
+    description: 'Lantern-lit ancient town & yellow heritage streets',
+    image: '/images/destinations/hoi-an.jpg',
     size: 'medium',
   },
   {
     name: 'Sapa',
     region: 'North',
-    description: 'Breathtaking rice terraces',
-    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
+    description: 'Breathtaking lush green rice terraces',
+    image: '/images/destinations/sapa.jpg',
     size: 'medium',
   },
   {
     name: 'Da Nang',
     region: 'Central',
-    description: 'Golden Bridge & pristine beaches',
-    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80',
+    description: 'Golden Bridge & pristine coastal vistas',
+    image: '/images/destinations/da-nang.jpg',
     size: 'small',
   },
   {
     name: 'Ho Chi Minh City',
     region: 'South',
     description: 'Vibrant metropolis buzzing with energy',
-    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80',
+    image: '/images/destinations/ho-chi-minh-city.jpg',
     size: 'large',
   },
   {
     name: 'Phu Quoc',
     region: 'South',
-    description: 'Tropical paradise island',
-    image: 'https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80',
+    description: 'Tropical paradise island & white sand beaches',
+    image: '/images/destinations/phu-quoc.jpg',
     size: 'small',
   },
   {
     name: 'Ninh Binh',
     region: 'North',
-    description: 'Karst landscapes & river valleys',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80',
+    description: 'Karst landscapes & scenic river boat rides',
+    image: '/images/destinations/ninh-binh.jpg',
     size: 'small',
   },
   {
     name: 'Hanoi',
     region: 'North',
-    description: 'Thousand-year capital & street food',
-    image: 'https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80',
+    description: 'Thousand-year capital & iconic Hoan Kiem Lake',
+    image: '/images/destinations/hanoi.jpg',
     size: 'medium',
   },
 ];
@@ -76,7 +76,7 @@ const Destinations = () => {
           {destinations.map((dest, idx) => (
             <a
               key={dest.name}
-              href="#contact"
+              href="/#contact"
               className={`destinations__item destinations__item--${dest.size}`}
               style={{ animationDelay: `${idx * 0.08}s` }}
             >

@@ -1,0 +1,652 @@
+[
+  {
+    "slug": "pho-ha-noi",
+    "title": "T%C3%B4_ph%E1%BB%9F_b%C3%B2_t%C3%A1i_%E1%BB%9F_Q1_%28Ph%E1%BB%9F_24%29_ng4th6n2020_%283%29.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Peachyeung316",
+    "brightness": 119.0,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/49/T%C3%B4_ph%E1%BB%9F_b%C3%B2_t%C3%A1i_%E1%BB%9F_Q1_%28Ph%E1%BB%9F_24%29_ng4th6n2020_%283%29.jpg"
+  },
+  {
+    "slug": "bun-cha",
+    "title": "File:Tuấn Bún Chả tết 2014.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Tuấn Bún Chả",
+    "brightness": 183.1,
+    "source": "https://commons.wikimedia.org/wiki/File:Tuấn_Bún_Chả_tết_2014.JPG"
+  },
+  {
+    "slug": "banh-cuon-thanh-tri",
+    "title": "B%C3%A1nh_cu%E1%BB%91n_ch%E1%BA%A3_l%E1%BB%A5a.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 119.5,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f6/B%C3%A1nh_cu%E1%BB%91n_ch%E1%BA%A3_l%E1%BB%A5a.jpg"
+  },
+  {
+    "slug": "thang-co",
+    "title": "Th%E1%BA%AFng_c%E1%BB%91.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 77.0,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/80/Th%E1%BA%AFng_c%E1%BB%91.jpg"
+  },
+  {
+    "slug": "com-lam",
+    "title": "C%C6%A1m_lam_T%C3%A2y_Nguy%C3%AAn.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 122.0,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e3/C%C6%A1m_lam_T%C3%A2y_Nguy%C3%AAn.jpg"
+  },
+  {
+    "slug": "cha-ca-la-vong",
+    "title": "File:Chả cá Lã Vọng Hà Nội tháng 2 năm 2018 (1).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Phương Huy",
+    "brightness": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Chả_cá_Lã_Vọng_Hà_Nội_tháng_2_năm_2018_(1).jpg"
+  },
+  {
+    "slug": "bun-dau-mam-tom",
+    "title": "File:Bún đậu mắm tôm.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "trungnguyen299",
+    "brightness": 132.5,
+    "source": "https://commons.wikimedia.org/wiki/File:Bún_đậu_mắm_tôm.jpg"
+  },
+  {
+    "slug": "banh-da-cua-hai-phong",
+    "title": "B%C3%A1nh_%C4%91a_cua_H%E1%BA%A3i_Ph%C3%B2ng_%2827.2_%281%29.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 128.3,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/B%C3%A1nh_%C4%91a_cua_H%E1%BA%A3i_Ph%C3%B2ng_%2827.2_%281%29.jpg"
+  },
+  {
+    "slug": "xoi-xeo",
+    "title": "X%C3%B4i_x%C3%A9o.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 110.2,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f9/X%C3%B4i_x%C3%A9o.jpg"
+  },
+  {
+    "slug": "bun-bo-hue",
+    "title": "File:Bun-Bo-Hue-from-Huong-Giang-2011.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Kham Tran - www.khamtran.com",
+    "brightness": 148.3,
+    "source": "https://commons.wikimedia.org/wiki/File:Bun-Bo-Hue-from-Huong-Giang-2011.jpg"
+  },
+  {
+    "slug": "cao-lau-hoi-an",
+    "title": "File:Eating - Cao Lau Ba Be, Hoi An Market.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "avlxyz",
+    "brightness": 111.6,
+    "source": "https://commons.wikimedia.org/wiki/File:Eating_-_Cao_Lau_Ba_Be,_Hoi_An_Market.jpg"
+  },
+  {
+    "slug": "mi-quang",
+    "title": "File:Mì Quảng, Da Nang, Vietnam.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Christopher Crouzet",
+    "brightness": 159.4,
+    "source": "https://commons.wikimedia.org/wiki/File:Mì_Quảng,_Da_Nang,_Vietnam.jpg"
+  },
+  {
+    "slug": "banh-beo-nam-loc",
+    "title": "B%C3%A1nh_B%C3%A8o%2C_Da_Nang%2C_Vietnam.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 127.0,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/41/B%C3%A1nh_B%C3%A8o%2C_Da_Nang%2C_Vietnam.jpg"
+  },
+  {
+    "slug": "hai-san-nha-trang",
+    "title": "File:Tôm rồng Nha Trang 2.jpg",
+    "license": "Public domain",
+    "artist": "Phương Huy (thảo luận)",
+    "brightness": 118.5,
+    "source": "https://commons.wikimedia.org/wiki/File:Tôm_rồng_Nha_Trang_2.jpg"
+  },
+  {
+    "slug": "banh-khoai-hue",
+    "title": "File:Banh Khoai (4265580561).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Charles Haynes from Hobart, Australia",
+    "brightness": 124.9,
+    "source": "https://commons.wikimedia.org/wiki/File:Banh_Khoai_(4265580561).jpg"
+  },
+  {
+    "slug": "nem-lui-hue",
+    "title": "AE_li%C3%AAn_hoan%2C_Nem_l%E1%BB%A5i_%E1%BB%9F_B%C3%ACnh_T%C3%A2n%2C_ng8th2n2020_%282%29.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 142.5,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/2e/AE_li%C3%AAn_hoan%2C_Nem_l%E1%BB%A5i_%E1%BB%9F_B%C3%ACnh_T%C3%A2n%2C_ng8th2n2020_%282%29.jpg"
+  },
+  {
+    "slug": "banh-can-phan-thiet",
+    "title": "File:Bánh căn (Vietnamese mini pancake) clay cooking pots.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "VinhNguyen.1257",
+    "brightness": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Bánh_căn_(Vietnamese_mini_pancake)_clay_cooking_pots.jpg"
+  },
+  {
+    "slug": "com-hen-hue",
+    "title": "File:Lễ hội ẩm thực Cửa Việt th4n2023 đặc sản cơm hến Vĩ Dạ (3).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Phương Huy",
+    "brightness": 133.4,
+    "source": "https://commons.wikimedia.org/wiki/File:Lễ_hội_ẩm_thực_Cửa_Việt_th4n2023_đặc_sản_cơm_hến_Vĩ_Dạ_(3).jpg"
+  },
+  {
+    "slug": "banh-mi-sai-gon",
+    "title": "File:Bánh mì.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stu Spivack",
+    "brightness": 147.1,
+    "source": "https://commons.wikimedia.org/wiki/File:Bánh_mì.jpg"
+  },
+  {
+    "slug": "hu-tiu-nam-vang",
+    "title": "H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 125.0,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/04/H%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang.jpg"
+  },
+  {
+    "slug": "ca-kho-to",
+    "title": "File:Cá kho tộ, cá hú.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Charles Haynes",
+    "brightness": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Cá_kho_tộ,_cá_hú.jpg"
+  },
+  {
+    "slug": "banh-xeo-mien-tay",
+    "title": "File:Bánh xèo with pork sausage and shrimp served with various garnishes.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ser Amantio di Nicolao",
+    "brightness": 145.3,
+    "source": "https://commons.wikimedia.org/wiki/File:Bánh_xèo_with_pork_sausage_and_shrimp_served_with_various_garnishes.jpg"
+  },
+  {
+    "slug": "trai-cay-cho-noi",
+    "title": "Khu_nh%C3%A0_%E1%BB%9F_k%E1%BA%BFt_h%E1%BB%A3p_ch%E1%BB%A3_bu%C3%B4n_b%C3%A1n_tr%C3%A1i_c%C3%A2y_%E1%BB%9F_b%E1%BB%9D_s%C3%B4ng_B%E1%BA%A3o_%C4%90%E1%BB%8Bnh%2C_Ph%C6%B0%E1%BB%9Dng_2%2C_th%C3%A0nh_ph%E1%BB%91_M%E1%BB%B9_Tho.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 156.6,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/53/Khu_nh%C3%A0_%E1%BB%9F_k%E1%BA%BFt_h%E1%BB%A3p_ch%E1%BB%A3_bu%C3%B4n_b%C3%A1n_tr%C3%A1i_c%C3%A2y_%E1%BB%9F_b%E1%BB%9D_s%C3%B4ng_B%E1%BA%A3o_%C4%90%E1%BB%8Bnh%2C_Ph%C6%B0%E1%BB%9Dng_2%2C_th%C3%A0nh_ph%E1%BB%91_M%E1%BB%B9_Tho.jpg"
+  },
+  {
+    "slug": "com-tam-sai-gon",
+    "title": "File:Cơm tấm SG (cơm sườn) ng27th9n2020 (1).jpg",
+    "license": "CC0",
+    "artist": "Phương Huy",
+    "brightness": 145.0,
+    "source": "https://commons.wikimedia.org/wiki/File:Cơm_tấm_SG_(cơm_sườn)_ng27th9n2020_(1).jpg"
+  },
+  {
+    "slug": "goi-cuon",
+    "title": "File:Spring rolls with peanut sauce.jpg",
+    "license": "CC BY 2.0",
+    "artist": "T.Tseng",
+    "brightness": 133.4,
+    "source": "https://commons.wikimedia.org/wiki/File:Spring_rolls_with_peanut_sauce.jpg"
+  },
+  {
+    "slug": "lau-mam-mien-tay",
+    "title": "B%C3%BAn_m%E1%BA%AFm.jpg",
+    "license": "",
+    "artist": "",
+    "brightness": 128.9,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/80/B%C3%BAn_m%E1%BA%AFm.jpg"
+  },
+  {
+    "slug": "banh-pia-soc-trang",
+    "title": "File:Bánh pía new.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "TonySam123",
+    "brightness": 151.4,
+    "source": "https://commons.wikimedia.org/wiki/File:Bánh_pía_new.jpg"
+  },
+  {
+    "filename": "banh-beo-nam-loc-2.jpg",
+    "slug": "banh-beo-nam-loc",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-beo-nam-loc"
+  },
+  {
+    "filename": "banh-beo-nam-loc.jpg",
+    "slug": "banh-beo-nam",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-beo-nam"
+  },
+  {
+    "filename": "banh-can-phan-thiet-2.jpg",
+    "slug": "banh-can-phan-thiet",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-can-phan-thiet"
+  },
+  {
+    "filename": "banh-can-phan-thiet.jpg",
+    "slug": "banh-can-phan",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-can-phan"
+  },
+  {
+    "filename": "banh-cuon-thanh-tri-2.jpg",
+    "slug": "banh-cuon-thanh-tri",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-cuon-thanh-tri"
+  },
+  {
+    "filename": "banh-cuon-thanh-tri-3.jpg",
+    "slug": "banh-cuon-thanh-tri",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-cuon-thanh-tri"
+  },
+  {
+    "filename": "banh-cuon-thanh-tri.jpg",
+    "slug": "banh-cuon-thanh",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-cuon-thanh"
+  },
+  {
+    "filename": "banh-da-cua-hai-phong-2.jpg",
+    "slug": "banh-da-cua-hai-phong",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-da-cua-hai-phong"
+  },
+  {
+    "filename": "banh-da-cua-hai-phong-3.jpg",
+    "slug": "banh-da-cua-hai-phong",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-da-cua-hai-phong"
+  },
+  {
+    "filename": "banh-da-cua-hai-phong.jpg",
+    "slug": "banh-da-cua-hai",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-da-cua-hai"
+  },
+  {
+    "filename": "banh-khoai-hue-2.jpg",
+    "slug": "banh-khoai-hue",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-khoai-hue"
+  },
+  {
+    "filename": "banh-khoai-hue.jpg",
+    "slug": "banh-khoai",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-khoai"
+  },
+  {
+    "filename": "banh-mi-sai-gon-2.jpg",
+    "slug": "banh-mi-sai-gon",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-mi-sai-gon"
+  },
+  {
+    "filename": "banh-mi-sai-gon.jpg",
+    "slug": "banh-mi-sai",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-mi-sai"
+  },
+  {
+    "filename": "banh-pia-soc-trang-2.jpg",
+    "slug": "banh-pia-soc-trang",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-pia-soc-trang"
+  },
+  {
+    "filename": "banh-pia-soc-trang.jpg",
+    "slug": "banh-pia-soc",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-pia-soc"
+  },
+  {
+    "filename": "banh-trang-nuong-da-lat-2.jpg",
+    "slug": "banh-trang-nuong-da-lat",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-trang-nuong-da-lat"
+  },
+  {
+    "filename": "banh-trang-nuong-da-lat.jpg",
+    "slug": "banh-trang-nuong-da",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-trang-nuong-da"
+  },
+  {
+    "filename": "banh-xeo-mien-tay-2.jpg",
+    "slug": "banh-xeo-mien-tay",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-xeo-mien-tay"
+  },
+  {
+    "filename": "banh-xeo-mien-tay-3.jpg",
+    "slug": "banh-xeo-mien-tay",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-xeo-mien-tay"
+  },
+  {
+    "filename": "banh-xeo-mien-tay.jpg",
+    "slug": "banh-xeo-mien",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=banh-xeo-mien"
+  },
+  {
+    "filename": "bo-la-lot.jpg",
+    "slug": "bo-la",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bo-la"
+  },
+  {
+    "filename": "bun-bo-hue-2.jpg",
+    "slug": "bun-bo-hue",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun-bo-hue"
+  },
+  {
+    "filename": "bun-bo-hue.jpg",
+    "slug": "bun-bo",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun-bo"
+  },
+  {
+    "filename": "bun-cha-2.jpg",
+    "slug": "bun-cha",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun-cha"
+  },
+  {
+    "filename": "bun-cha-3.jpg",
+    "slug": "bun-cha",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun-cha"
+  },
+  {
+    "filename": "bun-cha.jpg",
+    "slug": "bun",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun"
+  },
+  {
+    "filename": "bun-dau-mam-tom.jpg",
+    "slug": "bun-dau-mam",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=bun-dau-mam"
+  },
+  {
+    "filename": "ca-kho-to.jpg",
+    "slug": "ca-kho",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=ca-kho"
+  },
+  {
+    "filename": "ca-phe-trung-2.jpg",
+    "slug": "ca-phe-trung",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=ca-phe-trung"
+  },
+  {
+    "filename": "ca-phe-trung.jpg",
+    "slug": "ca-phe",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=ca-phe"
+  },
+  {
+    "filename": "cao-lau-hoi-an-2.jpg",
+    "slug": "cao-lau-hoi-an",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cao-lau-hoi-an"
+  },
+  {
+    "filename": "cao-lau-hoi-an-3.jpg",
+    "slug": "cao-lau-hoi-an",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cao-lau-hoi-an"
+  },
+  {
+    "filename": "cao-lau-hoi-an.jpg",
+    "slug": "cao-lau-hoi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cao-lau-hoi"
+  },
+  {
+    "filename": "cha-ca-la-vong-2.jpg",
+    "slug": "cha-ca-la-vong",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cha-ca-la-vong"
+  },
+  {
+    "filename": "cha-ca-la-vong-3.jpg",
+    "slug": "cha-ca-la-vong",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cha-ca-la-vong"
+  },
+  {
+    "filename": "cha-ca-la-vong.jpg",
+    "slug": "cha-ca-la",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=cha-ca-la"
+  },
+  {
+    "filename": "com-chay-ninh-binh.jpg",
+    "slug": "com-chay-ninh",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-chay-ninh"
+  },
+  {
+    "filename": "com-ga-hoi-an.jpg",
+    "slug": "com-ga-hoi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-ga-hoi"
+  },
+  {
+    "filename": "com-hen-hue.jpg",
+    "slug": "com-hen",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-hen"
+  },
+  {
+    "filename": "com-lam-2.jpg",
+    "slug": "com-lam",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-lam"
+  },
+  {
+    "filename": "com-lam.jpg",
+    "slug": "com",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com"
+  },
+  {
+    "filename": "com-tam-sai-gon-2.jpg",
+    "slug": "com-tam-sai-gon",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-tam-sai-gon"
+  },
+  {
+    "filename": "com-tam-sai-gon.jpg",
+    "slug": "com-tam-sai",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=com-tam-sai"
+  },
+  {
+    "filename": "goi-cuon-2.jpg",
+    "slug": "goi-cuon",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=goi-cuon"
+  },
+  {
+    "filename": "goi-cuon.jpg",
+    "slug": "goi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=goi"
+  },
+  {
+    "filename": "hai-san-nha-trang.jpg",
+    "slug": "hai-san-nha",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=hai-san-nha"
+  },
+  {
+    "filename": "hu-tiu-nam-vang-2.jpg",
+    "slug": "hu-tiu-nam-vang",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=hu-tiu-nam-vang"
+  },
+  {
+    "filename": "hu-tiu-nam-vang.jpg",
+    "slug": "hu-tiu-nam",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=hu-tiu-nam"
+  },
+  {
+    "filename": "lau-mam-mien-tay.jpg",
+    "slug": "lau-mam-mien",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=lau-mam-mien"
+  },
+  {
+    "filename": "mi-quang-2.jpg",
+    "slug": "mi-quang",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=mi-quang"
+  },
+  {
+    "filename": "mi-quang-3.jpg",
+    "slug": "mi-quang",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=mi-quang"
+  },
+  {
+    "filename": "mi-quang.jpg",
+    "slug": "mi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=mi"
+  },
+  {
+    "filename": "nem-lui-hue.jpg",
+    "slug": "nem-lui",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=nem-lui"
+  },
+  {
+    "filename": "pho-ha-noi-2.jpg",
+    "slug": "pho-ha-noi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=pho-ha-noi"
+  },
+  {
+    "filename": "pho-ha-noi-3.jpg",
+    "slug": "pho-ha-noi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=pho-ha-noi"
+  },
+  {
+    "filename": "pho-ha-noi.jpg",
+    "slug": "pho-ha",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=pho-ha"
+  },
+  {
+    "filename": "thang-co.jpg",
+    "slug": "thang",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=thang"
+  },
+  {
+    "filename": "trai-cay-cho-noi-2.jpg",
+    "slug": "trai-cay-cho-noi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=trai-cay-cho-noi"
+  },
+  {
+    "filename": "trai-cay-cho-noi-3.jpg",
+    "slug": "trai-cay-cho-noi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=trai-cay-cho-noi"
+  },
+  {
+    "filename": "trai-cay-cho-noi.jpg",
+    "slug": "trai-cay-cho",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=trai-cay-cho"
+  },
+  {
+    "filename": "xoi-xeo.jpg",
+    "slug": "xoi",
+    "license": "Creative Commons CC BY-SA / Public Domain",
+    "artist": "Wikimedia Commons Contributors",
+    "source": "https://commons.wikimedia.org/wiki/Special:Search?search=xoi"
+  }
+]

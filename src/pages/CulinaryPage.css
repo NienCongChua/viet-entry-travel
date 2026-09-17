@@ -1,72 +1,272 @@
-/* ===== Culinary Page — Warm Food-themed Accents ===== */
+/* ====================================================
+   VIET ENTRY TRAVEL — CULINARY & GASTRONOMY STYLES
+   Brand Colors: Primary #b31820, Accent #4e6e1c
+   ==================================================== */
 
-/* Hero override with warm gradient */
-.culinary-hero .service-hero__bg-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(30, 15, 5, 0.82) 0%,
-    rgba(194, 120, 50, 0.35) 100%
-  );
+:root {
+  --culinary-primary: #b31820;
+  --culinary-primary-dark: #8c1016;
+  --culinary-accent: #4e6e1c;
+  --culinary-accent-dark: #3b5415;
+  --culinary-warm-gold: #c27832;
+  --culinary-bg-warm: #faf7f2;
+  --culinary-bg-card: #ffffff;
+  --culinary-border: #e8e2d8;
+  --culinary-text-dark: #1c1917;
+  --culinary-text-muted: #57534e;
 }
 
-/* Highlight section */
-.culinary-highlights {
-  padding: var(--space-12) 0;
-  background: linear-gradient(to bottom, #fffbeb, var(--color-bg));
+.culinary-main {
+  background: var(--culinary-bg-warm);
+  color: var(--culinary-text-dark);
 }
 
-.culinary-highlights__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-}
-
-.culinary-highlights__item {
-  text-align: center;
-  padding: var(--space-6) var(--space-3);
-}
-
-.culinary-highlights__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background: rgba(194, 120, 50, 0.1);
+/* ===== HERO SECTION ===== */
+.culinary-hero {
+  position: relative;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--space-3);
-  font-size: 1.6rem;
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
 }
 
-.culinary-highlights__item h4 {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-1);
+.culinary-hero .service-hero__bg-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 8, 4, 0.86) 0%,
+    rgba(78, 110, 28, 0.35) 50%,
+    rgba(179, 24, 32, 0.5) 100%
+  );
 }
 
-.culinary-highlights__item p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: 1.6;
+.culinary-hero .service-hero__badge {
+  background: rgba(179, 24, 32, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffdadb;
+  backdrop-filter: blur(8px);
 }
 
-/* ===== Region Tabs ===== */
-.culinary-region-tabs {
-  display: flex;
-  gap: var(--space-3);
+/* Quick Stats Bar */
+.culinary-stats-bar {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-8);
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  padding: var(--space-3) var(--space-6);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
   flex-wrap: wrap;
 }
 
-.culinary-region-tab {
+.culinary-stat-pill {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.culinary-stat-pill strong {
+  font-size: 1.15rem;
+  color: #fcd34d;
+  font-weight: 800;
+}
+
+.culinary-stat-pill span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.culinary-stat-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== HEADINGS ===== */
+.culinary-section-heading {
+  margin-bottom: var(--space-10);
+}
+
+.culinary-section-heading.text-center {
+  text-align: center;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.culinary-section-heading .section-subtitle {
+  font-size: 1.05rem;
+  color: var(--culinary-text-muted);
+  line-height: 1.7;
+  margin-top: var(--space-2);
+}
+
+/* ===== PHILOSOPHY SECTION ===== */
+.culinary-philosophy-section {
+  padding: var(--space-16) 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--culinary-border);
+}
+
+.culinary-philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+.culinary-philosophy-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.culinary-philosophy-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--culinary-bg-warm);
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-xl);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.culinary-philosophy-btn:hover {
+  border-color: var(--culinary-accent);
+  background: #f4f6ee;
+  transform: translateX(4px);
+}
+
+.culinary-philosophy-btn--active {
+  border-color: var(--culinary-primary);
+  background: #fdf2f2;
+  box-shadow: 0 4px 16px rgba(179, 24, 32, 0.08);
+}
+
+.culinary-philosophy-btn__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: rgba(179, 24, 32, 0.1);
+  color: var(--culinary-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.culinary-philosophy-btn--active .culinary-philosophy-btn__icon {
+  background: var(--culinary-primary);
+  color: white;
+}
+
+.culinary-philosophy-btn__text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--culinary-text-dark);
+  margin-bottom: 0.15rem;
+}
+
+.culinary-philosophy-btn__text span {
+  font-size: 0.8rem;
+  color: var(--culinary-text-muted);
+}
+
+.culinary-philosophy-card {
+  height: 100%;
+  padding: var(--space-8);
+  background: linear-gradient(135deg, #fdfbf7 0%, #fff 100%);
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.culinary-philosophy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(78, 110, 28, 0.12);
+  color: var(--culinary-accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.culinary-philosophy-card h3 {
+  font-size: 1.6rem;
+  font-family: 'Georgia', serif;
+  color: var(--culinary-text-dark);
+  margin-bottom: var(--space-3);
+}
+
+.culinary-philosophy-lead {
+  font-size: 1rem;
+  color: var(--culinary-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+}
+
+.culinary-philosophy-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px dashed var(--culinary-border);
+  padding-top: var(--space-5);
+}
+
+.culinary-philosophy-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--culinary-text-dark);
+}
+
+.culinary-philosophy-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--culinary-primary);
+  flex-shrink: 0;
+}
+
+/* ===== REGIONAL EXPLORER ===== */
+.culinary-explorer-section {
+  padding: var(--space-16) 0;
+}
+
+.culinary-macro-tabs {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.culinary-macro-tab {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-5);
-  background: var(--color-bg);
-  border: 2px solid var(--color-border-light);
+  background: white;
+  border: 2px solid var(--culinary-border);
   border-radius: var(--radius-xl);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -74,367 +274,669 @@
   min-width: 220px;
 }
 
-.culinary-region-tab:hover {
-  border-color: #d97706;
+.culinary-macro-tab:hover {
+  border-color: var(--culinary-primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(179, 24, 32, 0.08);
 }
 
-.culinary-region-tab--active {
-  border-color: #d97706;
-  background: linear-gradient(135deg, #fffbeb, #fef3c7);
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.15);
+.culinary-macro-tab--active {
+  border-color: var(--culinary-primary);
+  background: linear-gradient(135deg, #fff7f7 0%, #ffffff 100%);
+  box-shadow: 0 6px 20px rgba(179, 24, 32, 0.12);
 }
 
-.culinary-region-tab__img {
-  width: 48px;
-  height: 48px;
+.culinary-macro-tab__thumb {
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-lg);
   object-fit: cover;
-  flex-shrink: 0;
 }
 
-.culinary-region-tab strong {
+.culinary-macro-tab strong {
   display: block;
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  margin-bottom: 0.1rem;
+  font-size: 0.95rem;
+  color: var(--culinary-text-dark);
 }
 
-.culinary-region-tab span {
+.culinary-macro-tab span {
   display: block;
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  color: var(--culinary-text-muted);
 }
 
-/* Region Intro */
-.culinary-region-intro {
+/* Region Banner */
+.culinary-region-banner {
+  background: #ffffff;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.culinary-region-banner__text h3 {
+  font-size: 1.35rem;
+  font-family: 'Georgia', serif;
+  color: var(--culinary-primary-dark);
+  margin-bottom: 0.25rem;
+}
+
+.culinary-region-banner__text p {
+  font-size: 0.95rem;
+  color: var(--culinary-text-muted);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.culinary-region-banner__provinces {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.culinary-provinces-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--culinary-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.3rem;
+}
+
+.culinary-province-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(78, 110, 28, 0.08);
+  border: 1px solid rgba(78, 110, 28, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--culinary-accent-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Filter Bar */
+.culinary-filter-bar {
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.culinary-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.culinary-search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--culinary-text-muted);
+}
+
+.culinary-search-input {
+  width: 100%;
+  padding: 0.75rem 2.8rem 0.75rem 2.75rem;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  background: var(--culinary-bg-warm);
+  color: var(--culinary-text-dark);
+  transition: all 0.2s;
+}
+
+.culinary-search-input:focus {
+  outline: none;
+  border-color: var(--culinary-primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(179, 24, 32, 0.1);
+}
+
+.culinary-search-clear {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--culinary-text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.culinary-category-pills {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.culinary-cat-pill {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--culinary-border);
+  background: var(--culinary-bg-warm);
+  color: var(--culinary-text-muted);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.culinary-cat-pill:hover {
+  border-color: var(--culinary-accent);
+  color: var(--culinary-accent-dark);
+}
+
+.culinary-cat-pill--active {
+  background: var(--culinary-primary);
+  border-color: var(--culinary-primary);
+  color: white !important;
+}
+
+.culinary-results-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--culinary-text-muted);
+  margin-bottom: var(--space-6);
+  padding: 0 var(--space-1);
+}
+
+.culinary-reset-btn {
+  background: none;
+  border: none;
+  color: var(--culinary-primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Empty state */
+.culinary-empty-state {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto var(--space-10);
+  padding: var(--space-16) var(--space-4);
+  background: white;
+  border: 1px dashed var(--culinary-border);
+  border-radius: var(--radius-2xl);
 }
 
-.culinary-region-intro p {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  font-style: italic;
+.culinary-empty-state p {
+  color: var(--culinary-text-muted);
+  margin-bottom: var(--space-4);
 }
 
-/* ===== Specialty Dish Cards ===== */
-.culinary-specialties {
+/* ===== DISHES GRID & CARDS ===== */
+.culinary-specialties-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
 }
 
-.culinary-dish-card {
-  background: var(--color-bg);
-  border-radius: var(--radius-xl);
+.culinary-card {
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
   overflow: hidden;
-  border: 1px solid var(--color-border-light);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid var(--culinary-border);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.culinary-dish-card:hover {
+.culinary-card:hover {
   transform: translateY(-8px);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04);
   border-color: transparent;
+  box-shadow:
+    0 20px 36px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(179, 24, 32, 0.06);
 }
 
-.culinary-dish-card__image {
+.culinary-card__media {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  background: #1c1917;
 }
 
-.culinary-dish-card__image img {
+.culinary-card__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.culinary-dish-card:hover .culinary-dish-card__image img {
-  transform: scale(1.06);
+.culinary-card:hover .culinary-card__media img {
+  transform: scale(1.08);
 }
 
-.culinary-dish-card__image-overlay {
+.culinary-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+  background: linear-gradient(
+    to top,
+    rgba(10, 5, 2, 0.6) 0%,
+    transparent 55%
+  );
 }
 
-.culinary-dish-card__origin {
+.culinary-card__badges {
   position: absolute;
-  bottom: var(--space-2);
-  left: var(--space-2);
+  bottom: 0.65rem;
+  left: 0.65rem;
+  display: flex;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.culinary-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.25rem 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  color: white;
+}
+
+.culinary-badge--province {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.culinary-badge--photos {
+  background: rgba(78, 110, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.culinary-card__category {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8px);
-  border-radius: var(--radius-full);
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.culinary-dish-card__body {
-  padding: var(--space-4) var(--space-5) var(--space-5);
-}
-
-.culinary-dish-card__name {
-  font-size: var(--font-size-lg);
   font-weight: 700;
-  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.culinary-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.culinary-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--culinary-text-dark);
+  margin-bottom: var(--space-2);
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+
+.culinary-card:hover .culinary-card__title {
+  color: var(--culinary-primary);
+}
+
+.culinary-card__desc {
+  font-size: 0.85rem;
+  color: var(--culinary-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.culinary-card__flavors {
+  display: flex;
+  gap: var(--space-4);
+  padding: 0.5rem 0;
+  border-top: 1px dashed var(--culinary-border);
+  margin-bottom: var(--space-3);
+}
+
+.culinary-flavor-dot-group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+}
+
+.culinary-flavor-label {
+  color: var(--culinary-text-muted);
+}
+
+.culinary-flavor-meter {
+  color: var(--culinary-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.culinary-card__footer {
+  border-top: 1px solid #f2eee8;
+  padding-top: var(--space-3);
+}
+
+.culinary-card__action {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--culinary-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.2s;
+}
+
+.culinary-card:hover .culinary-card__action {
+  gap: 0.6rem;
+}
+
+/* ===== AXIS TIMELINE SECTION ===== */
+.culinary-journey-section {
+  padding: var(--space-16) 0;
+  background: white;
+  border-top: 1px solid var(--culinary-border);
+  border-bottom: 1px solid var(--culinary-border);
+}
+
+.culinary-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  position: relative;
+}
+
+.culinary-timeline-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.culinary-timeline-step__marker {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--culinary-primary);
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 4px 12px rgba(179, 24, 32, 0.3);
+}
+
+.culinary-timeline-step__card {
+  padding: var(--space-6);
+  background: var(--culinary-bg-warm);
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-xl);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.culinary-timeline-region {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--culinary-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: var(--space-2);
 }
 
-.culinary-dish-card__desc {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: 1.7;
+.culinary-timeline-step__card h4 {
+  font-size: 1.2rem;
+  font-family: 'Georgia', serif;
+  color: var(--culinary-text-dark);
+  margin-bottom: var(--space-2);
 }
 
-/* CTA warm variant */
-.culinary-cta {
-  background: linear-gradient(135deg, #451a03 0%, #78350f 60%, #b45309 100%);
+.culinary-timeline-step__card p {
+  font-size: 0.85rem;
+  color: var(--culinary-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
 }
 
-/* Dish card as link */
-a.culinary-dish-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+.culinary-timeline-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
 }
 
-/* ====================================================
-   CULINARY DETAIL PAGE
-   ==================================================== */
+.culinary-timeline-tags span {
+  padding: 0.2rem 0.55rem;
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--culinary-text-dark);
+}
 
-/* Hero */
-.cd-page { background: var(--color-bg); }
+/* ===== DETAIL PAGE STYLES ===== */
+.cd-page {
+  background: var(--culinary-bg-warm);
+}
 
 .cd-hero {
   position: relative;
   min-height: 520px;
   display: flex;
   align-items: flex-end;
-  padding-bottom: var(--space-10);
+  padding: var(--space-16) 0 var(--space-10);
+  background: #110d0a;
 }
 
 .cd-hero__bg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
 .cd-hero__bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.65);
 }
 
 .cd-hero__bg-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(10, 5, 0, 0.7) 0%,
-      rgba(10, 5, 0, 0.3) 30%,
-      rgba(10, 5, 0, 0.15) 50%,
-      rgba(10, 5, 0, 0.5) 70%,
-      rgba(10, 5, 0, 0.92) 100%
-    );
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 5, 2, 0.4) 0%,
+    rgba(10, 5, 2, 0.75) 60%,
+    rgba(17, 13, 10, 0.98) 100%
+  );
 }
 
 .cd-hero__content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
-  padding: 0 var(--space-8);
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 var(--space-4);
 }
 
 .cd-hero__back {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(255,255,255,0.7);
-  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-weight: 600;
   text-decoration: none;
   margin-bottom: var(--space-4);
   transition: color 0.2s;
 }
 
-.cd-hero__back:hover { color: white; }
+.cd-hero__back:hover {
+  color: white;
+}
 
-.cd-hero__region {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem 0.9rem;
-  background: rgba(217, 119, 6, 0.3);
-  border: 1px solid rgba(217, 119, 6, 0.4);
-  border-radius: var(--radius-full);
-  color: #fcd34d;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
+.cd-hero__pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
   margin-bottom: var(--space-3);
 }
 
+.cd-hero__region,
+.cd-hero__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cd-hero__region {
+  background: rgba(179, 24, 32, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffe3e3;
+  backdrop-filter: blur(8px);
+}
+
+.cd-hero__category {
+  background: rgba(78, 110, 28, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #e5f0d2;
+  backdrop-filter: blur(8px);
+}
+
 .cd-hero__title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 800;
   color: white;
   line-height: 1.15;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
   font-family: 'Georgia', serif;
 }
 
 .cd-hero__intro {
-  font-size: var(--font-size-base);
-  color: rgba(255,255,255,0.85);
-  line-height: 1.8;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-/* Sections */
+/* Detail Section */
 .cd-section {
   padding: var(--space-12) 0;
 }
 
-.cd-section--gallery {
-  background: linear-gradient(to bottom, #fefce8, var(--color-bg));
-}
-
-.cd-section--warm {
-  background: linear-gradient(135deg, #fffbeb, #fef3c7);
-}
-
 .cd-section__header {
-  text-align: center;
   margin-bottom: var(--space-8);
+  max-width: 720px;
 }
 
-/* Cultural History */
-.cd-history {
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.cd-history p {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: 1.9;
-  margin-bottom: var(--space-5);
-  text-align: justify;
-}
-
-.cd-history p:first-child::first-letter {
-  float: left;
-  font-size: 3.4rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-right: 0.5rem;
-  color: #b45309;
-  font-family: 'Georgia', serif;
-}
-
-/* ===== Photo Gallery ===== */
+/* Multi-Photo Mosaic Gallery */
 .cd-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-3);
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
 }
 
 .cd-gallery__item {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 1;
-}
-
-.cd-gallery__item--large {
-  grid-column: span 2;
-  grid-row: span 2;
+  background: #1c1917;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .cd-gallery__item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .cd-gallery__item:hover img {
   transform: scale(1.08);
 }
 
+.cd-gallery__item--hero {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
 .cd-gallery__item-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
-}
-
-.cd-gallery__item-overlay span {
-  color: white;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
   opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.3s;
+  transition: opacity 0.3s;
 }
 
 .cd-gallery__item:hover .cd-gallery__item-overlay {
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.cd-gallery__item:hover .cd-gallery__item-overlay span {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* ===== Lightbox ===== */
+.cd-gallery__overlay-btn {
+  padding: 0.5rem 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--culinary-text-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Lightbox Modal */
 .cd-lightbox {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(5, 3, 2, 0.94);
+  backdrop-filter: blur(14px);
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: cdFadeIn 0.25s ease;
-}
-
-@keyframes cdFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.cd-lightbox__img {
-  max-width: 85vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: var(--radius-lg);
+  padding: var(--space-6);
 }
 
 .cd-lightbox__close {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  background: rgba(255,255,255,0.15);
-  border: none;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
   width: 44px;
   height: 44px;
@@ -443,17 +945,21 @@ a.culinary-dish-card {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  z-index: 10;
 }
 
-.cd-lightbox__close:hover { background: rgba(255,255,255,0.3); }
+.cd-lightbox__close:hover {
+  background: var(--culinary-primary);
+  transform: scale(1.05);
+}
 
 .cd-lightbox__arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.12);
-  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
   width: 52px;
   height: 52px;
@@ -462,218 +968,398 @@ a.culinary-dish-card {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  z-index: 10;
 }
 
-.cd-lightbox__arrow:hover { background: rgba(255,255,255,0.25); }
-
-.cd-lightbox__arrow--left { left: var(--space-4); }
-.cd-lightbox__arrow--right { right: var(--space-4); }
-
-.cd-lightbox__counter {
-  position: absolute;
-  bottom: var(--space-4);
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.7);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+.cd-lightbox__arrow:hover {
+  background: var(--culinary-primary);
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* ===== Recipe Steps ===== */
-.cd-recipe {
-  max-width: 780px;
-  margin: 0 auto;
+.cd-lightbox__arrow--left {
+  left: 1.5rem;
+}
+
+.cd-lightbox__arrow--right {
+  right: 1.5rem;
+}
+
+.cd-lightbox__stage {
+  max-width: 90vw;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-}
-
-.cd-recipe__step {
-  display: flex;
-  gap: var(--space-5);
-  align-items: flex-start;
-  padding: var(--space-5);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  transition: box-shadow 0.3s;
-}
-
-.cd-recipe__step:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-.cd-recipe__step-num {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, #d97706, #b45309);
-  color: white;
-  font-weight: 800;
-  font-size: 1.1rem;
-  display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.cd-recipe__step-content h3 {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-1);
+.cd-lightbox__img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
 
-.cd-recipe__step-content p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: 1.7;
+.cd-lightbox__caption {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-top: var(--space-3);
+  text-align: center;
 }
 
-/* ===== Tips & Places ===== */
-.cd-tips-places {
+/* Flavor & Ingredients Anatomy */
+.cd-anatomy-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: var(--space-8);
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-.cd-tips h3,
-.cd-places h3 {
+.cd-flavor-box,
+.cd-ingredients-box {
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cd-box-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-4);
+  margin-bottom: 0.35rem;
 }
 
-.cd-tips ul {
-  list-style: none;
-  padding: 0;
+.cd-box-icon {
+  color: var(--culinary-primary);
+}
+
+.cd-box-header h3 {
+  font-size: 1.35rem;
+  font-family: 'Georgia', serif;
+  color: var(--culinary-text-dark);
+}
+
+.cd-box-desc {
+  font-size: 0.85rem;
+  color: var(--culinary-text-muted);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+.cd-flavor-bars {
   display: flex;
   flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cd-flavor-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cd-flavor-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cd-flavor-score {
+  color: var(--culinary-primary);
+  font-weight: 800;
+}
+
+.cd-flavor-track {
+  height: 8px;
+  background: #f0eae1;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.cd-flavor-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--culinary-accent) 0%, var(--culinary-primary) 100%);
+  border-radius: var(--radius-full);
+  transition: width 1s ease-out;
+}
+
+.cd-ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3);
 }
 
-.cd-tips ul li {
-  padding-left: 1.4rem;
-  position: relative;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-}
-
-.cd-tips ul li::before {
-  content: '💡';
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.cd-places ul {
-  list-style: none;
-  padding: 0;
+.cd-ingredient-pill {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.cd-places ul li {
+  align-items: center;
+  gap: 0.45rem;
   padding: var(--space-3) var(--space-4);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--culinary-bg-warm);
+  border: 1px solid var(--culinary-border);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(217, 119, 6, 0.15);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--culinary-text-dark);
 }
 
-.cd-places ul li strong {
-  display: block;
-  font-size: var(--font-size-sm);
-  color: var(--color-text);
-  margin-bottom: 0.15rem;
+.cd-ing-check {
+  color: var(--culinary-accent);
+  flex-shrink: 0;
 }
 
-.cd-places ul li span {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+/* History Card */
+.cd-history-card {
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  display: flex;
+  gap: var(--space-6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-/* Back CTA */
-.cd-back-cta {
-  padding: var(--space-8) 0 var(--space-12);
+.cd-history-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: rgba(179, 24, 32, 0.1);
+  color: var(--culinary-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.cd-back-cta__link {
+.cd-history-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cd-history-card__body p {
+  font-size: 1.05rem;
+  color: #383431;
+  line-height: 1.8;
+}
+
+/* Master Recipe Flow */
+.cd-recipe-flow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.cd-recipe-card {
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  gap: var(--space-4);
+  transition: transform 0.2s ease;
+}
+
+.cd-recipe-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--culinary-accent);
+}
+
+.cd-recipe-card__num {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--culinary-accent);
+  color: white;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cd-recipe-card__content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--culinary-text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.cd-recipe-card__content p {
+  font-size: 0.85rem;
+  color: var(--culinary-text-muted);
+  line-height: 1.65;
+}
+
+/* Tips & Places Grid */
+.cd-tips-places-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.cd-tips-column,
+.cd-places-column {
+  background: white;
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.cd-column-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-6);
+  color: var(--culinary-primary);
+}
+
+.cd-column-header h3 {
+  font-size: 1.35rem;
+  font-family: 'Georgia', serif;
+  color: var(--culinary-text-dark);
+}
+
+.cd-tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cd-tips-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--culinary-text-dark);
+  line-height: 1.6;
+}
+
+.cd-tip-check {
+  color: var(--culinary-accent);
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.cd-places-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.cd-place-card {
+  padding: var(--space-4);
+  background: var(--culinary-bg-warm);
+  border: 1px solid var(--culinary-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cd-place-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--culinary-primary);
+}
+
+.cd-place-name {
+  font-size: 1.05rem;
+  color: var(--culinary-text-dark);
+}
+
+.cd-place-loc {
+  font-size: 0.8rem;
+  color: var(--culinary-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cd-place-note {
+  font-size: 0.75rem;
+  color: var(--culinary-accent-dark);
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+.cd-back-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #b45309;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: color 0.2s;
 }
 
-.cd-back-cta__link:hover { color: #92400e; }
+.cd-back-btn:hover {
+  color: white;
+}
 
-/* ===== Responsive ===== */
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 1024px) {
-  .culinary-specialties {
+  .culinary-specialties-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .cd-gallery {
-    grid-template-columns: repeat(3, 1fr);
+  .culinary-philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+  .cd-anatomy-grid {
+    grid-template-columns: 1fr;
+  }
+  .cd-tips-places-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .culinary-highlights__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .culinary-region-tabs {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .culinary-region-tab {
-    min-width: unset;
-  }
-
-  .culinary-specialties {
+  .culinary-specialties-grid {
     grid-template-columns: 1fr;
   }
-
-  .cd-hero { min-height: 400px; }
-
-  .cd-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .culinary-timeline-grid {
+    grid-template-columns: 1fr;
   }
-
-  .cd-gallery__item--large {
-    grid-column: span 2;
+  .cd-recipe-flow {
+    grid-template-columns: 1fr;
+  }
+  .cd-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+  .cd-gallery__item--hero {
+    grid-column: span 1;
     grid-row: span 1;
   }
-
-  .cd-tips-places {
+  .culinary-macro-tab {
+    min-width: 100%;
+  }
+  .cd-ingredients-grid {
     grid-template-columns: 1fr;
+  }
+  .culinary-region-banner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 480px) {
-  .culinary-highlights__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cd-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .cd-gallery__item--large {
-    grid-column: span 1;
-  }
+.culinary-outline-btn {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
+
+.culinary-outline-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: white !important;
+}
+

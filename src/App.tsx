@@ -15,9 +15,13 @@ import CulinaryPage from './pages/CulinaryPage';
 import CulinaryDetailPage from './pages/CulinaryDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 
+import ScrollToTop from './components/ScrollToTop';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesOverviewPage />} />
@@ -35,6 +39,7 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <FloatingWhatsApp />
     </Router>
   );
 }
