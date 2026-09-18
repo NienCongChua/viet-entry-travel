@@ -6,13 +6,19 @@
   "description": "Quote-request API for vietentrytravel.com — receives the website's contact form and emails the team.",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "deploy": "wrangler deploy",
+    "worker:dev": "wrangler dev"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-rate-limit": "^7.4.0",
-    "nodemailer": "^6.9.14"
+    "nodemailer": "^6.9.14",
+    "worker-mailer": "^1.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.134.0"
   }
 }

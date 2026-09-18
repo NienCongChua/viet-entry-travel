@@ -51,8 +51,41 @@ Set it to wherever this backend is deployed, e.g.:
 VITE_API_URL=https://api.vietentrytravel.com
 ```
 
-## Deploying
+## Deploying to Cloudflare Workers
 
-This is a plain Node/Express app — it runs on any Node host (Render, Railway,
-Fly.io, a VPS with pm2, etc.). Set the same environment variables from `.env`
-in your hosting provider's dashboard; do not commit `.env` itself.
+The backend can be deployed directly as a serverless Cloudflare Worker (`worker.js`).
+
+### Option 1: Automatic Deploy on Git Push (GitHub Actions)
+
+This repository includes `.github/workflows/deploy-backend.yml` which automatically deploys whenever you push changes to `main` within `backend/`.
+
+**Steps to activate:**
+1. In Cloudflare Dashboard:
+   - Go to **My Profile** > **API Tokens** > **Create Token**.
+   - Use the **Edit Cloudflare Workers** template (or give `Account > Workers Scripts > Edit` permission).
+   - Copy the generated API Token.
+   - Note your **Account ID** (visible in Cloudflare Dashboard URL or on the Workers overview sidebar).
+2. In GitHub repository (`NienCongChua/viet-entry-travel`):
+   - Go to **Settings** > **Secrets and variables** > **Actions**.
+   - Add two Repository Secrets:
+     - `CLOUDFLARE_API_TOKEN` = `<your-api-token>`
+     - `CLOUDFLARE_ACCOUNT_ID` = `<your-account-id>`
+3. Set your Secrets in Cloudflare (for sending email):
+   - In Cloudflare Dashboard > **Workers & Pages** > `viet-entry-travel-backend` > **Settings** > **Variables and Secrets**:
+     - `SMTP_USER`: `info@vietentrytravel.com`
+     - `SMTP_PASS`: `Canmoc1ti2026@` (or your mail password)
+     - *(Optional)* `RESEND_API_KEY`: If you prefer using Resend HTTP API instead of direct SMTP.
+4. Push to `main` — GitHub Actions will automatically deploy your Worker!
+
+### Option 2: Deploy manually from CLI
+
+```bash
+cd backend
+npx wrangler login
+npx wrangler deploy
+# Set secret credentials:
+npx wrangler secret put SMTP_USER
+npx wrangler secret put SMTP_PASS
+```
+
+Once deployed, Cloudflare gives you a Worker URL like `https://viet-entry-travel-backend.<subdomain>.workers.dev`. Set `VITE_API_URL` in your frontend to this URL.
