@@ -50,8 +50,8 @@ const team: TeamMember[] = [
   {
     name: 'Hannah Phung',
     role: 'Founder and CEO',
-    image: '/images/members/hannah.jpeg',
-    imagePosition: '35% 25%',
+    image: '/images/members/hannah.png',
+    imagePosition: 'center 20%',
     bio: 'Born in Vinh Phuc, Hannah founded Viet Entry Travel to share Vietnam\'s authentic beauty, rich culture, and warm hospitality with travelers worldwide.',
   },
   {
