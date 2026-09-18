@@ -38,30 +38,28 @@ const values = [
   },
 ];
 
-const team = [
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  imagePosition?: string;
+  bio: string;
+}
+
+const team: TeamMember[] = [
   {
-    name: 'Minh Tran',
-    role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    bio: 'Born in Hoi An, Minh founded Viet Entry Travel to share Vietnam\'s beauty with the world.',
+    name: 'Hannah Phung',
+    role: 'Founder and CEO',
+    image: '/images/members/hannah.jpeg',
+    imagePosition: '35% 25%',
+    bio: 'Born in Vinh Phuc, Hannah founded Viet Entry Travel to share Vietnam\'s authentic beauty, rich culture, and warm hospitality with travelers worldwide.',
   },
   {
-    name: 'Lan Nguyen',
-    role: 'Head of Operations',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-    bio: 'Lan ensures every trip runs flawlessly — from visa processing to on-the-ground logistics.',
-  },
-  {
-    name: 'Tuan Vo',
-    role: 'Lead Tour Guide',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    bio: 'Tuan has explored every province of Vietnam and specializes in adventure & trekking tours.',
-  },
-  {
-    name: 'Hoa Le',
-    role: 'Travel Consultant',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-    bio: 'Hoa helps travelers design their perfect Vietnam itinerary — no request is too big or small.',
+    name: 'Richard Jacob',
+    role: 'Lead of IT Department',
+    image: '/images/members/richard.jpeg',
+    imagePosition: 'center 15%',
+    bio: 'Overseeing technology and digital platforms to deliver a seamless, modern, and reliable travel booking experience for global visitors.',
   },
 ];
 
@@ -141,14 +139,14 @@ const AboutPage = () => {
               </div>
               <div className="about-story__content">
                 <span className="section-label">✦ How It Started</span>
-                <h2 className="section-title">From Hoi An to the World</h2>
+                <h2 className="section-title">From Vinh Phuc to the World</h2>
                 <p>
-                  Viet Entry Travel was founded in 2016 by Minh Tran, a Hoi An native who grew up watching
-                  travelers fall in love with Vietnam's beauty — but too often missing its soul. He started
+                  Viet Entry Travel was founded by Hannah Phung, a Vinh Phuc native who grew up watching
+                  travelers fall in love with Vietnam's beauty — but too often missing its soul. She started
                   with a simple idea: create travel experiences that go beyond the surface.
                 </p>
                 <p>
-                  What began as a small team of passionate local guides has grown into a full-service travel
+                  What began as a passionate commitment to genuine hospitality has grown into a full-service travel
                   company trusted by over 15,000 travelers from 80+ countries. But our philosophy remains
                   the same: <strong>real people, real places, real stories.</strong>
                 </p>
@@ -197,7 +195,11 @@ const AboutPage = () => {
               {team.map((member) => (
                 <div key={member.name} className="about-team__card">
                   <div className="about-team__card-image">
-                    <img src={member.image} alt={member.name} />
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                    />
                   </div>
                   <div className="about-team__card-info">
                     <h3 className="about-team__card-name">{member.name}</h3>
