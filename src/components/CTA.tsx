@@ -3,7 +3,24 @@ import { useLocation } from 'react-router-dom';
 import { Send, User, Phone, Mail, MapPin, Calendar, Users, BedDouble, Plane, MessageSquare, Loader2 } from 'lucide-react';
 import './CTA.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const resolveApiUrl = (): string => {
+  const envUrl = (import.meta.env.VITE_API_URL || '').trim();
+  if (envUrl) {
+    if (/^(localhost|127\.0\.0\.1)(:\d+)?/i.test(envUrl)) {
+      return `http://${envUrl}`.replace(/\/+$/, '');
+    }
+    if (!/^https?:\/\//i.test(envUrl)) {
+      return `https://${envUrl}`.replace(/\/+$/, '');
+    }
+    return envUrl.replace(/\/+$/, '');
+  }
+  if (import.meta.env.PROD) {
+    return 'https://api.vietentrytravel.com';
+  }
+  return 'http://localhost:4000';
+};
+
+const API_URL = resolveApiUrl();
 
 const initialForm = {
   title: '',
