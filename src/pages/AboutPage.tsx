@@ -56,10 +56,10 @@ const team: TeamMember[] = [
   },
   {
     name: 'Richard Jacob',
-    role: 'Lead of IT Department',
+    role: 'Head of Operations & Tour Support',
     image: '/images/members/richard.jpeg',
     imagePosition: 'center 15%',
-    bio: 'Overseeing technology and digital platforms to deliver a seamless, modern, and reliable travel booking experience for global visitors.',
+    bio: 'Oversees daily operations and leads contingency response, providing direct backup and rapid resolution for any unexpected issues during tours.',
   },
 ];
 
