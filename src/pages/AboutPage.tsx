@@ -55,6 +55,13 @@ const team: TeamMember[] = [
     bio: 'Born in Vinh Phuc, Hannah founded Viet Entry Travel to share Vietnam\'s authentic beauty, rich culture, and warm hospitality with travelers worldwide.',
   },
   {
+    name: 'Hai Phung',
+    role: 'Co-Founder & Head of Business Development',
+    image: '/images/members/hai.png',
+    imagePosition: 'center 15%',
+    bio: 'Leads strategic partnerships and market expansion, dedicated to curating exceptional travel experiences and connecting global travelers with authentic Vietnam.',
+  },
+  {
     name: 'Richard Jacob',
     role: 'Head of Operations & Tour Support',
     image: '/images/members/richard.jpeg',
